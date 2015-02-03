@@ -1,5 +1,64 @@
-%h3 Welcome
-%p
-  = link_to 'Users:', users_path
-  = User.count
-  registrado
+.row
+  .col-md-12
+  %button.btn.btn-success{:type => "button"} Anunciar inmueble
+  %button.btn.btn-success{:type => "button"} Solicitar inmueble
+.row
+  .titulo CasasMap, venda y compre inmuebles
+.row
+  .col-md-8
+
+  .col-md-2
+    %form.form-inline
+    .form-group
+    %label Busqueda por codigo
+    %input{:placeholder => "codigo de aviso", :type => "text"}/
+  .col-md-2
+    %hr/
+    %button.btn.btn-default{:type => "submit"} Buscar
+%hr/
+.row
+  .col-md-1.text-right
+    %busquedas Tipo de transacción
+  .col-md-1
+    %select.form-control
+      %option Venta
+      %option Alquiler
+      %option Anticretico
+  .col-md-1.text-right
+    %busquedas Tipo de propiedad
+  .col-md-1
+    %select.form-control
+      %option Casa
+      %option Edificio
+      %option Departamento
+      %option Oficina
+      %option Local
+      %option Terreno
+      %option Garaje
+      %option Baulera
+  .col-md-1.text-right
+    %busquedas Región
+  .col-md-1
+    %select.form-control
+      %option La Paz
+      %option 2
+      %option 3
+      %option 4
+      %option 5
+  .col-md-1.text-right
+    %busquedas Zona
+  .col-md-1
+    %select.form-control
+      %option 1
+      %option 2
+      %option 3
+      %option 4
+      %option 5
+  .col-md-4
+    %a.btn.btn-default{:href => "#", :role => "button"} Buscar
+%hr/
+.row
+  .col-xs-6.col-md-3
+    %a.thumbnail{:href => "#"}
+    %img{:alt => "...", :src => "..."}/
+  \.
