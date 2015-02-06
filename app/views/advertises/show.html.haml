@@ -1,0 +1,46 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @advertise.title
+%p
+  %b Description:
+  = @advertise.description
+%p
+  %b Direction:
+  = @advertise.direction
+%p
+  %b Price:
+  = @advertise.price
+%p
+  %b Negotiable:
+  = @advertise.negotiable
+%p
+  %b Credit:
+  = @advertise.credit
+%p
+  %b Price :
+%p
+  %b M2:
+%p
+  %b Name contact:
+  = @advertise.name_contact
+%p
+  %b Phone contact:
+  = @advertise.phone_contact
+%p
+  %b Time to contact:
+  = @advertise.time_to_contact
+%p
+  %b Visits number:
+  = @advertise.visits_number
+%p
+  %b Publish date:
+  = @advertise.publish_date
+%p
+  %b Validate date:
+  = @advertise.validate_date
+
+= link_to 'Edit', edit_advertise_path(@advertise)
+\|
+= link_to 'Back', advertises_path

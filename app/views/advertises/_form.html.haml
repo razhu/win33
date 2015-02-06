@@ -1,0 +1,37 @@
+= simple_form_for @advertise do |f|
+  = f.error_notification
+  .form-inputs
+    .row
+      .col-md-6
+        %h1 Paso 1: Ubicación e info del inmueble
+        = f.input :title, label: 'Titulo de la publicacion'
+        = f.input :description, label: 'Descripción'
+        = f.input :direction, label: 'Dirección'
+        %br/
+        = f.input :price, label: 'Precio'
+        .row
+          .col-md-4
+            = f.input :negotiable, label: 'Negociable'
+          .col-md-4
+            = f.input :credit, label: 'Financiamiento'
+          .col-md-4
+            = f.input :price_m2, label: 'm2'
+        %br/
+        %h1 Paso 2: Info de contacto
+        = f.input :name_contact, label: 'Nombre de contacto'
+        = f.input :phone_contact, label: 'Telefono de contacto'
+        = f.input :time_to_contact, label: 'Hora preferida para ser contactado'
+        %br/
+        %h1 Paso 3: Fotos y videos
+        %h1 Fotos interior
+        %h1 Fotos exterior
+        %br/
+        %input#user_options_true{:name => "acceptance", :type => "checkbox", :value => "true"}/
+        %label.collection_check_box{:for => "acceptance_true"}   Acepto terminos y condiciones
+      .col-md-6
+        = image_tag('casamaplogo.png')
+        %h1 Caracteristicas
+    .row
+      .col-md-12
+        .form-actions
+        = f.submit 'Crear'

@@ -1,0 +1,48 @@
+%h1 Listing advertises
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Description
+      %th Direction
+      %th Price
+      %th Negotiable
+      %th Credit
+      %th Price M2
+      %th Name contact
+      %th Phone contact
+      %th Time to contact
+      %th Visits number
+      %th Publish date
+      %th Validate date
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @advertises.each do |advertise|
+      %tr
+        %td= advertise.title
+        %td= advertise.description
+        %td= advertise.direction
+        %td= advertise.price
+        %td= advertise.negotiable
+        %td= advertise.credit
+        %td= advertise.price_m2
+        %td= advertise.name_contact
+        %td= advertise.phone_contact
+        %td= advertise.time_to_contact
+        %td= advertise.visits_number
+        %td= advertise.publish_date
+        %td= advertise.validate_date
+        %td= link_to 'Show', advertise
+        %td= link_to 'Edit', edit_advertise_path(advertise)
+        %td= link_to 'Destroy', advertise, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= simple_form_for :ja, :url => advertises_path do |f|
+  = f.input :a
+
+= link_to 'New Advertise', new_advertise_path
