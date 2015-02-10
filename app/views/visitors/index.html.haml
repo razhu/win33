@@ -1,32 +1,14 @@
 .row
-  .col-md-12
-  %button.btn.btn-success{:type => "button"} Anunciar inmueble
-  %button.btn.btn-success{:type => "button"} Solicitar inmueble
+  .titulo
+    %h1
+      %b Venda y Compre Inmuebles en Bolivia.
 .row
-  .titulo CasasMap, venda y compre inmuebles
-.row
-  .col-md-8
-
   .col-md-2
-    %form.form-inline
-    .form-group
-    %label Busqueda por codigo
-    %input{:placeholder => "codigo de aviso", :type => "text"}/
-  .col-md-2
-    %hr/
-    %button.btn.btn-default{:type => "submit"} Buscar
-%hr/
-.row
-  .col-md-1.text-right
-    %busquedas Tipo de transacción
-  .col-md-1
     %select.form-control
       %option Venta
       %option Alquiler
       %option Anticretico
-  .col-md-1.text-right
-    %busquedas Tipo de propiedad
-  .col-md-1
+  .col-md-2
     %select.form-control
       %option Casa
       %option Edificio
@@ -36,29 +18,169 @@
       %option Terreno
       %option Garaje
       %option Baulera
-  .col-md-1.text-right
-    %busquedas Región
-  .col-md-1
+  .col-md-2
     %select.form-control
       %option La Paz
       %option 2
       %option 3
       %option 4
       %option 5
-  .col-md-1.text-right
-    %busquedas Zona
-  .col-md-1
+  .col-md-2
     %select.form-control
       %option 1
       %option 2
       %option 3
       %option 4
       %option 5
-  .col-md-4
-    %a.btn.btn-default{:href => "#", :role => "button"} Buscar
+  .col-md-1
+    %a.btn.btn-primary{:href => "#", :role => "button"} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+  .col-md-2
+    %form.form-inline
+      .form-group
+      %input{:placeholder => "Codigo inmueble. Ej:123", :type => "text"}/
+  .col-md-1
+    %button.btn.btn-primary{:type => "submit"} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 %hr/
 .row
-  .col-xs-6.col-md-3
-    %a.thumbnail{:href => "#"}
-    %img{:alt => "...", :src => "..."}/
-  \.
+  .col-md-12
+    %h1 (carrusel de anuncios patrocindos va aqui)
+%hr/
+.row
+  .col-md-6
+    %table.table.table-striped.table-hover
+      %thead
+        %h4 Inmuebles Ofertados Recientemente
+        %tr
+          %th Fecha
+          %th Titulo
+          %th Region/Zona
+          %th Precio ($))
+      %tbody
+        %tr
+          %td 21/06
+          %td Column content
+          %td Column/content
+          %td Column content
+        %tr
+          %td 21/06
+          %td Column content
+          %td Column/content
+          %td Column content
+        %tr
+          %td 21/06
+          %td Column content
+          %td Column/content
+          %td Column content
+  .col-md-6
+    %table.table.table-striped.table-hover
+      %thead
+        %h4 Inmuebles Solicitados Recientemente
+        %tr
+          %th Fecha
+          %th Titulo
+          %th Region/Zona
+          %th Precio ($))
+      %tbody
+        %tr
+          %td 21/06
+          %td Column content
+          %td Column content
+          %td Column content
+        %tr
+          %td 21/06
+          %td Column content
+          %td Column content
+          %td Column content
+        %tr
+          %td 21/06
+          %td Column content
+          %td Column content
+          %td Column content
+.row
+  .col-md-6
+    %ul#interest_tabs.nav.nav-tabs
+      / top level tabs
+      %li
+        %a{"data-toggle" => "tab", :href => "#all"} Todo
+      %li
+        %a{"data-toggle" => "tab", :href => "#brands"} Venta
+      %li
+        %a{"data-toggle" => "tab", :href => "#media"} Alquiler
+    / top level tab content
+    .tab-content
+      / all tab menu
+      #all.tab-pane
+        %ul#all_tabs.nav.nav-tabs
+          %li
+            %a{"data-toggle" => "tab", :href => "#all_popular"} Casa
+          %li
+            %a{"data-toggle" => "tab", :href => "#all_unique"} Dpto
+      / brands tab menu
+      #brands.tab-pane
+        %ul#brands_tabs.nav.nav-tabs
+          %li
+            %a{"data-toggle" => "tab", :href => "#brands_popular"} Casas
+          %li
+            %a{"data-toggle" => "tab", :href => "#brands_unique"} Dpto
+      / media tab menu
+      #media.tab-pane
+        %ul#media_tabs.nav.nav-tabs
+          %li
+            %a{"data-toggle" => "tab", :href => "#media_popular"} Casas
+          %li
+            %a{"data-toggle" => "tab", :href => "#media_unique"} Dpto
+
+    / all tab content
+    .tab-content
+      #all_popular.tab-pane
+        %i todas las casas  aqui
+      #all_unique.tab-pane
+        %i todos los dptos aqui
+    / brands tab content
+    .tab-content
+      #brands_popular.tab-pane
+        %i casas en venta
+      #brands_unique.tab-pane
+        %i ventas dptos
+    / media tab content
+    .tab-content
+      #media_popular.tab-pane
+        %i casas alquiler
+      #media_unique.tab-pane
+        %i dptos en alquiler
+
+  .col-md-6
+    .panel.panel-primary
+      .panel-heading
+        %h2.panel-title Agente de bienes raices?
+      .panel-body
+        Me falta oner imagen y descripcion de lujo para que se animen , etc etc
+    .panel.panel-primary
+      .panel-heading
+        %h2.panel-title Anunciante particular?
+      .panel-body
+        Me falta poner imagen y descripcion de lujo para que se animen , etc etc
+    %table.table.table-striped.table-hover
+      %thead
+        %h4 Foro
+        %tr
+          %th Fecha
+          %th Pregunta
+          %th Autor
+          %th Respuetas
+      %tbody
+        %tr
+          %td 21/06
+          %td b bla bla blalbl
+          %td Column/content
+          %td 3
+        %tr
+          %td 21/06
+          %td Column content
+          %td Column/content
+          %td 4
+        %tr
+          %td 21/06
+          %td Column content
+          %td Column/content
+          %td 7
