@@ -36,10 +36,10 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # General Settings
-  config.app_domain = 'somedomain.com'
+  config.app_domain = 'localhost:3000'
 
   # Email
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :sendmail
   config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: config.app_domain }
   config.action_mailer.smtp_settings = {
