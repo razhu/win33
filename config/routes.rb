@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
   resources :users
   match '/user/:id/finish_signup' => 'user#finish_signup', via: [:get, :patch], :as => :finish_signup
+  mount Commontator::Engine => '/commontator'
 
 end

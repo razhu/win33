@@ -1,3 +1,4 @@
+
 class AdvertisesController < ApplicationController
   before_action :set_advertise, only: [:show, :edit, :update, :destroy]
 
@@ -37,11 +38,12 @@ class AdvertisesController < ApplicationController
   end
 
   private
-    def set_advertise
-      @advertise = Advertise.friendly.find(params[:id])
-    end
+  def set_advertise
+    @advertise = Advertise.friendly.find(params[:id])
+  end
 
-    def advertise_params
-      params.require(:advertise).permit(:title, :description, :direction, :price, :negotiable, :credit, :price_, :m2, :name_contact, :phone_contact, :time_to_contact, :visits_number, :publish_date, :validate_date)
-    end
+  def advertise_params
+    params.require(:advertise).permit(:title, :description, :direction, :price, :negotiable, :credit, :price_, :m2, :name_contact, :phone_contact, :time_to_contact, :visits_number, :publish_date, :validate_date)
+  end
+
 end

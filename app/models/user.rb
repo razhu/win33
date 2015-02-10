@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
+  acts_as_commontator
+
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
   after_initialize :set_default_role, :if => :new_record?
@@ -61,5 +63,6 @@ class User < ActiveRecord::Base
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
   end
+
 
 end
