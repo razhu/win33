@@ -27,7 +27,7 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'devise-i18n'
-gem 'devise-i18n-views'
+gem 'activeadmin', github: 'activeadmin'
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'
