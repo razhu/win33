@@ -28,6 +28,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-linkedin'
 gem 'devise-i18n'
 gem 'activeadmin', github: 'activeadmin'
+gem "font-awesome-rails"
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'

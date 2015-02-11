@@ -132,6 +132,8 @@ GEM
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     forem (0.0.1)
       simple_form
     foreman (0.77.0)
@@ -421,6 +423,7 @@ DEPENDENCIES
   devise-i18n
   factory_girl_rails
   faker
+  font-awesome-rails
   forem
   foreman
   friendly_id
