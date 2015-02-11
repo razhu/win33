@@ -10,6 +10,7 @@
         %br/
         = f.input :price, label: 'Precio'
         .row
+          = f.association :property_type
           .col-md-4
             = f.input :negotiable, label: 'Negociable'
           .col-md-4
