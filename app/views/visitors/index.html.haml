@@ -4,34 +4,71 @@
       %b Venda y Compre Inmuebles en Bolivia.
 .row
   .col-md-2
-    %select.form-control
-      %option Venta
-      %option Alquiler
-      %option Anticretico
+    .btn-group
+      %a.btn.btn-primary{:href => "#"} Contrato
+      %a.btn.btn-primary.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+        %span.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => "#"} Anticretico
+        %li
+          %a{:href => "#"} Alquiler
+        %li
+          %a{:href => "#"} Venta
   .col-md-2
-    %select.form-control
-      %option Casa
-      %option Edificio
-      %option Departamento
-      %option Oficina
-      %option Local
-      %option Terreno
-      %option Garaje
-      %option Baulera
+    .btn-group
+      %a.btn.btn-primary{:href => "#"} Casas
+      %a.btn.btn-primary.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+        %span.caret
+      %ul.dropdown-menu
+        %li
+          %a{:href => "#"} Casa
+        %li
+          %a{:href => "#"} Edificio
+        %li
+          %a{:href => "#"} Departamento
+        %li.divider
+        %li
+          %a{:href => "#"} Oficina
+        %li.divider
+        %li
+          %a{:href => "#"} Terreno
+        %li.divider
+        %li
+          %a{:href => "#"} Garaje
+        %li.divider
+        %li
+          %a{:href => "#"} Baulera
   .col-md-2
-    %select.form-control
-      %option La Paz
-      %option 2
-      %option 3
-      %option 4
-      %option 5
+    .btn-group
+      %button.btn.btn-primary.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
+        Region
+        %span.caret
+      %ul.dropdown-menu{:role => "menu"}
+        %li
+          %a{:href => "#"} Santa Cruz
+        %li
+          %a{:href => "#"} Cochabamba
+        %li
+          %a{:href => "#"} La Paz
+        %li.divider
+        %li
+          %a{:href => "#"} El Alto
   .col-md-2
-    %select.form-control
-      %option 1
-      %option 2
-      %option 3
-      %option 4
-      %option 5
+    .btn-group
+      %button.btn.btn-primary.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :type => "button"}
+        Area
+        %span.caret
+      %ul.dropdown-menu{:role => "menu"}
+        %li
+          %a{:href => "#"} option 1
+        %li
+          %a{:href => "#"} option 2
+        %li
+          %a{:href => "#"} option 3
+        %li.divider
+        %li
+          %a{:href => "#"} option 4
   .col-md-1
     %a.btn.btn-primary{:href => "#", :role => "button"} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
   .col-md-2
