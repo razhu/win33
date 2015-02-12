@@ -3,14 +3,20 @@
   .form-inputs
     .row
       .col-md-6
-        %h1 Paso 1: Ubicación e info del inmueble
+        = f.fields_for :location do |p|
+          = p.input :region, collection: Location.all_types, label: 'Región'
         = f.input :title, label: 'Titulo de la publicacion'
         = f.input :description, label: 'Descripción'
         = f.input :direction, label: 'Dirección'
+        = f.fields_for :property_type do |p|
+          = p.input :property_type, collection: PropertyType.all_types, label: 'Tipo de propiedad'
+        = f.fields_for :transacion_type do |p|
+          = p.input :transacion_type, collection: TransactionType.all_types, label: 'Tipo de transacción'
+        -#= f.association :property_type
+        -#= f.association :transaction_type
         %br/
         = f.input :price, label: 'Precio'
         .row
-          = f.association :property_type
           .col-md-4
             = f.input :negotiable, label: 'Negociable'
           .col-md-4

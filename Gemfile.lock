@@ -49,6 +49,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
+    ancestry (2.1.0)
+      activerecord (>= 3.0.0)
     arbre (1.0.3)
       activesupport (>= 3.0.0)
     arel (5.0.1.20140414130214)
@@ -407,6 +409,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin!
   activerecord-postgis-adapter
+  ancestry
   better_errors
   bootstrap-sass
   bootswatch-rails
