@@ -7,7 +7,29 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
+      = link_to image_tag('casamaplogo.png'), root_path, class: 'navbar-brand'
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
+        %li
+          =link_to raw('<span class="glyphicon glyphicon-home" aria-hidden="true"></span>'), root_path
+        %li
+          =link_to raw('<button type="button" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Anunciar Inmueble</button>'), '#'
+        %li
+          =link_to raw('<button type="button" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Solicitar Inmueble</button>'), '#'
+      %ul.nav.navbar-nav.navbar-right
         = render 'layouts/navigation_links'
+        %li.dropdown
+          =link_to raw('<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Ayuda <b class="caret"></b>'), '#', {:class => "dropdown-toggle", "aria-expanded" => "false", "data-toggle" => "dropdown"}
+          %ul.dropdown-menu
+            %li
+              =link_to 'Como Anunciar', '#'
+              =link_to 'Opciones de Pago', '#'
+            %li.divider
+            %li
+              =link_to 'Contactenos', '#'
+            %li
+              =link_to 'Acerca de', '#'
+            %li.divider
+            %li
+              =link_to 'Switch to English', '#'
+

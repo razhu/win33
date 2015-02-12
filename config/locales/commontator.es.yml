@@ -1,0 +1,78 @@
+es:
+  activerecord:
+  attributes:
+    commontator/comment:
+      body: Comentario
+      creator: Crear
+      editor: Editar
+      thread: Tema
+    commontator/subscription:
+      subscriber: Susbscritor
+      thread: Tema
+    commontator/thread:
+      commontable: Commontable
+  models:
+    commontator/comment:
+      one: comentar
+      other: comentarios
+    commontator/subscription:
+      one: subscripcción
+      other: subscripciones
+    commontator/thread:
+      one: thread
+      other: threads
+  commontator:
+    anonymous: Anonimo
+    comment:
+      actions:
+        cancel: Cancelar
+        confirm_delete: "Estas seguros de que quieres borrar este comentario?"
+        create: "Enviar comentario"
+        delete: Borrar
+        edit: Editar
+        new: "Nuevo comentario"
+        undelete: Undelete
+        update: "Modificar comentario"
+      errors:
+        already_deleted: "Este comentario ya ha sido borrado."
+        create: "Este comentario no pudo ser publicado porque:"
+        double_posted: "es un duplicado de otro comentario"
+        not_deleted: "Este comentario no esta borrado"
+        update: "El comentario no pudo ser modificado porque:"
+      status:
+        created_at: "Publicado en %{created_at}."
+        deleted_by: "Borrado por %{deleter_name}."
+        updated_at: "Ultima modificación por:  %{editor_name} on %{updated_at}."
+    email:
+      comment_created:
+        body: "%{creator_name} comento en %{commontable_name}:"
+        subject: "%{creator_name} publicó un comentario en %{commontable_name}"
+      thread_link_html: "<a href=\"%{commontable_url}\">Click here</a> para ver todos los comentarios en %{commontable_name}."
+      undisclosed_recipients: "Undisclosed Recipients"
+    require_login: "Debes iniciar sesión para publicar un comentario"
+    subscription:
+      actions:
+        confirm_unsubscribe: "Estas seguro que quieres desuscribirte de este tema?"
+        subscribe: Suscribirse
+        unsubscribe: Dessuscribirse
+      errors:
+        already_subscribed: "Ya estas suscrito a este tema"
+        not_subscribed: "No estas suscrito a este tema."
+    thread:
+      actions:
+        show_all: "Mostrar todos los comentarios"
+        filter: "Filtrar comentarios"
+        close: "Cerrar tema"
+        confirm_close: "Estas seguro que quieres cerrar este tema?"
+        reopen: "Re-abrir tema"
+        show: "Mostrar comentarios"
+      errors:
+        already_closed: "Este tema ya ha sido cerrado."
+        not_closed: "Este tema no esta cerrado."
+      status:
+        cannot_post: "Nuevos comentarios no pueden ser publicados en este momento."
+        closed: "Comentarios (Cerrado por %{closer_name})"
+        open: Comentarios
+  time:
+    formats:
+      commontator: "%b %d %Y at %I:%M%p %Z"
