@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require casasmap.js
-//= require_tree .
+//= require_tree ./plugins/
+//= require casasmap

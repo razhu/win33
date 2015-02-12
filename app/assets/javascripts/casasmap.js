@@ -16,3 +16,9 @@ $('#interest_tabs').on('click', 'a[data-toggle="tab"]', function(e) {
     }
 
 });
+$('.autoplay').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+});
