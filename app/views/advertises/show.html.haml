@@ -11,37 +11,76 @@
       = link_to raw('</span><span class="glyphicon glyphicon-film"></span> Agregar videos'), "#"
       \|
       = link_to raw('<span class="glyphicon glyphicon-trash"></span> Eliminar'), "#"
+      \|
+      = link_to raw('<span class="glyphicon glyphicon-bookmark"></span> Marcar como vendido'), "#"
 .row
   .col-md-12
-  %h2= @advertise.title
+    %h2= @advertise.title
 .row
-  .col-md-6
-    %h3
-      %b= @advertise.price
-    %b= @advertise.negotiable
-  .col-md-6
+  .col-md-2
+    %b= @advertise.price
+    M2
+    %b Credit:
+    = @advertise.credit
+    (
+    = @advertise.negotiable
+    )
+  .col-md-3
     %b= @advertise.direction
     Region/Area
+  .col-md-3
+    %p
+      %b
+        Publicado:
+      = @advertise.created_at.to_s(format = :short)
+      %b
+        Expira:
+      = @advertise.validate_date
+  .col-md-3
+    %p
+      <span class="glyphicon glyphicon-eye-open"></span> Vistas:
+      = @advertise.visits_number
+      twitter button
+      fb button
+  .col-md-1
+    %button.btn.btn-default{"data-original-title" => "Tooltip on top", "data-placement" => "top", "data-toggle" => "tooltip", :title => "", :type => "button"}
+      <span class="glyphicon glyphicon-heart"></span>
+    %button.btn.btn-default{"data-original-title" => "Tooltip on top", "data-placement" => "top", "data-toggle" => "tooltip", :title => "", :type => "button"}
+      <span class="glyphicon glyphicon-print"></span>
 .row
   .col-md-6
+    %ul.nav.nav-tabs
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+          Fotos (#)
+          %span.caret
+        %ul.dropdown-menu
+          %li
+            %a{"data-toggle" => "tab", :href => "#exterior"} Fotos Interior
+          %li.divider
+          %li
+            %a{"data-toggle" => "tab", :href => "#interior"} Fotos Exterior
+      %li
+        %a{"data-toggle" => "tab", :href => "#videos"} Videos(#)
+      %li
+        %a{"data-toggle" => "tab", :href => "#map"} Mapa
+    #myTabContent.tab-content
+      #exterior.tab-pane.fade.active.in
+        %p
+          =image_tag('house.png')
+      #interior.tab-pane.fade.active.in
+        %p
+          =image_tag('casamaplogo.png')
+      #videos.tab-pane
+        %p videos go here...
+      #map.tab-pane
+        %p map goes here...
     %p
-      %b <span class="glyphicon glyphicon-eye-open"></span> Visits number:
-      = @advertise.visits_number
-    %p
-      %b Publish date:
-      = @advertise.created_at.to_s(format = :short)
-    %p
-      %b Validate date:
-      = @advertise.validate_date
-    %p
-      %b Description:
       = @advertise.description
     %p
-      %b Credit:
-      = @advertise.credit
-    %p
-      %b M2:
+      %b Comentarios:
     = commontator_thread(@advertise)
+
   .col-md-6
     .panel.panel-primary
       .panel-heading
@@ -62,18 +101,19 @@
       .panel-body
         %form.form-horizontal
           %fieldse
-            .form-group
-              %label.col-lg-2.control-label{:for => "inputEmail"} Nombre
-              .col-lg-10
-                %input#inputEmail.form-control{:placeholder => "Nombre", :type => "text"}
-            .form-group
-              %label.col-lg-2.control-label{:for => "inputEmail"} Email
-              .col-lg-10
-                %input#inputEmail.form-control{:placeholder => "Email", :type => "text"}
-            .form-group
-              %label.col-lg-2.control-label{:for => "inputEmail"} Telefono
-              .col-lg-10
-                %input#inputEmail.form-control{:placeholder => "Telefono o Celular", :type => "text"}
+            - if user_signed_in?
+              .form-group
+                %label.col-lg-2.control-label{:for => "inputEmail"} Nombre
+                .col-lg-10
+                  %input#inputEmail.form-control{:placeholder => "Nombre", :type => "text"}
+              .form-group
+                %label.col-lg-2.control-label{:for => "inputEmail"} Email
+                .col-lg-10
+                  %input#inputEmail.form-control{:placeholder => "Email", :type => "text"}
+              .form-group
+                %label.col-lg-2.control-label{:for => "inputEmail"} Telefono
+                .col-lg-10
+                  %input#inputEmail.form-control{:placeholder => "Telefono o Celular", :type => "text"}
             .form-group
               %label.col-lg-2.control-label{:for => "textArea"} Mensaje
               .col-lg-10
@@ -85,4 +125,17 @@
                 %button.btn.btn-default{:type => "reset"} Cancelar
                 %button.btn.btn-primary{:type => "submit"} Enviar Mensaje
 
-
+    .alert.alert-dismissible.alert-danger
+      %button.close{"data-dismiss" => "alert", :type => "button"} ×
+      %h4 Advertencia!
+      %p
+        Consejos de seguridad antes de comprar
+      %p
+        Al pagar o señar:
+        No uses servicios de pago anónimos (por ejemplo: Western Union).
+        No envíes dinero al exterior: cuídate si mencionan ventas rápidas por mudanzas.
+        No confíes en ofertas debajo del precio de mercado. Mira nuestra guía de --precios.
+      %p
+        Comunícate con el vendedor:
+        Habla por teléfono con tu contraparte.
+        Verifica personalmente la documentación del inmueble. ¡Siempre!
