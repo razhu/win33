@@ -3,8 +3,6 @@
   .form-inputs
     .row
       .col-md-6
-        = f.fields_for :location do |p|
-          = p.input :region, collection: Location.all_types, label: 'Región'
         = f.input :title, label: 'Titulo de la publicacion'
         = f.input :description, label: 'Descripción'
         = f.input :direction, label: 'Dirección'

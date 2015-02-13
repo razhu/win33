@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212160928) do
+ActiveRecord::Schema.define(version: 20150212230150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,6 +129,14 @@ ActiveRecord::Schema.define(version: 20150212160928) do
     t.string   "ancestry"
   end
 
+  create_table "photos", force: true do |t|
+    t.string   "ubication"
+    t.string   "genre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ubication_id"
+  end
+
   create_table "property_types", force: true do |t|
     t.string   "property_type"
     t.datetime "created_at"
@@ -161,6 +169,7 @@ ActiveRecord::Schema.define(version: 20150212160928) do
     t.string   "unconfirmed_email"
     t.integer  "role"
     t.string   "username"
+    t.string   "ubication_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

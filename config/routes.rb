@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :photos
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :advertises

@@ -5,5 +5,6 @@ class Advertise < ActiveRecord::Base
   belongs_to :property_type
   belongs_to :transaction_type
   belongs_to :location
+
 end
 
