@@ -1,48 +1,88 @@
-%p#notice= notice
+.row
+  %p#notice= notice
+- if user_signed_in?
+  .row
+    .col-md-12
+      %p
+      = link_to raw('<span class="glyphicon glyphicon-pencil"></span> Editar'), edit_advertise_path(@advertise)
+      \|
+      = link_to raw('<span class="glyphicon glyphicon-picture"></span> Agregar fotos'), "#"
+      \|
+      = link_to raw('</span><span class="glyphicon glyphicon-film"></span> Agregar videos'), "#"
+      \|
+      = link_to raw('<span class="glyphicon glyphicon-trash"></span> Eliminar'), "#"
+.row
+  .col-md-12
+  %h2= @advertise.title
+.row
+  .col-md-6
+    %h3
+      %b= @advertise.price
+    %b= @advertise.negotiable
+  .col-md-6
+    %b= @advertise.direction
+    Region/Area
+.row
+  .col-md-6
+    %p
+      %b <span class="glyphicon glyphicon-eye-open"></span> Visits number:
+      = @advertise.visits_number
+    %p
+      %b Publish date:
+      = @advertise.created_at.to_s(format = :short)
+    %p
+      %b Validate date:
+      = @advertise.validate_date
+    %p
+      %b Description:
+      = @advertise.description
+    %p
+      %b Credit:
+      = @advertise.credit
+    %p
+      %b M2:
+    = commontator_thread(@advertise)
+  .col-md-6
+    .panel.panel-primary
+      .panel-heading
+        %h3.panel-title Dato del anunciante
+      .panel-body
+        %p
+          %b Nombre:
+          = @advertise.name_contact
+        %p
+          %b Telefono:
+          = @advertise.phone_contact
+        %p
+          %b Hora Preferida para ser contactado:
+          = @advertise.time_to_contact
+    .panel.panel-primary
+      .panel-heading
+        %h3.panel-title <span class="glyphicon glyphicon-question-sign"></span> Dudas? Pregunte al Anunciante!
+      .panel-body
+        %form.form-horizontal
+          %fieldse
+            .form-group
+              %label.col-lg-2.control-label{:for => "inputEmail"} Nombre
+              .col-lg-10
+                %input#inputEmail.form-control{:placeholder => "Nombre", :type => "text"}
+            .form-group
+              %label.col-lg-2.control-label{:for => "inputEmail"} Email
+              .col-lg-10
+                %input#inputEmail.form-control{:placeholder => "Email", :type => "text"}
+            .form-group
+              %label.col-lg-2.control-label{:for => "inputEmail"} Telefono
+              .col-lg-10
+                %input#inputEmail.form-control{:placeholder => "Telefono o Celular", :type => "text"}
+            .form-group
+              %label.col-lg-2.control-label{:for => "textArea"} Mensaje
+              .col-lg-10
+                %textarea#textArea.form-control{:rows => "3"}
+                %span.help-block Escribe un mensaje al anunciante. No olvides poner tus datos de contacto
 
-%p
-  %b Title:
-  = @advertise.title
-%p
-  %b Description:
-  = @advertise.description
-%p
-  %b Direction:
-  = @advertise.direction
-%p
-  %b Price:
-  = @advertise.price
-%p
-  %b Negotiable:
-  = @advertise.negotiable
-%p
-  %b Credit:
-  = @advertise.credit
-%p
-  %b Price :
-%p
-  %b M2:
-%p
-  %b Name contact:
-  = @advertise.name_contact
-%p
-  %b Phone contact:
-  = @advertise.phone_contact
-%p
-  %b Time to contact:
-  = @advertise.time_to_contact
-%p
-  %b Visits number:
-  = @advertise.visits_number
-%p
-  %b Publish date:
-  = @advertise.publish_date
-%p
-  %b Validate date:
-  = @advertise.validate_date
+            .form-group
+              .col-lg-10.col-lg-offset-2
+                %button.btn.btn-default{:type => "reset"} Cancelar
+                %button.btn.btn-primary{:type => "submit"} Enviar Mensaje
 
-= commontator_thread(@advertise)
 
-= link_to 'Edit', edit_advertise_path(@advertise)
-\|
-= link_to 'Back', advertises_path
