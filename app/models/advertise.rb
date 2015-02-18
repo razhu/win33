@@ -4,5 +4,7 @@ class Advertise < ActiveRecord::Base
   acts_as_commontable
   belongs_to :property_type
   belongs_to :transaction_type
+  belongs_to :location
+
 end
 

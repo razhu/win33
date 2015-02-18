@@ -1,0 +1,14 @@
+%p#notice= notice
+
+%p
+  %b Ubication:
+  = @photo.ubication
+%p
+  %b Genre:
+  = @photo.genre
+
+= image_tag attachment_url(@photo, :ubication )
+
+= link_to 'Edit', edit_photo_path(@photo)
+\|
+= link_to 'Back', photos_path
