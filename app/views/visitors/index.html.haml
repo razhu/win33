@@ -104,57 +104,85 @@
 %hr/
 .row
   .col-md-6
-    %table.table.table-striped.table-hover
-      %thead
-        %h4 Inmuebles Ofertados Recientemente
-        %tr
-          %th Fecha
-          %th Titulo
-          %th Region/Zona
-          %th Precio ($))
-      %tbody
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column/content
-          %td Column content
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column/content
-          %td Column content
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column/content
-          %td Column content
+    .panel.panel.panel-default
+      .panel-body
+        %table.table.table-striped.table-hover
+          %thead
+            %h4 Inmuebles Ofertados Recientemente
+            %tr
+              %th Fecha
+              %th Titulo
+              %th Region/Zona
+              %th Precio ($))
+          %tbody
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column/content
+              %td Column content
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column/content
+              %td Column content
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column/content
+              %td Column content
+        .div.text-center
+          %ul.pagination.pagination-sm
+            %li.disabled
+              %a{:href => "#"} <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+            %li.active
+              %a{:href => "#"} 1
+            %li
+              %a{:href => "#"} 2
+            %li
+              %a{:href => "#"} 3
+            %li
+              %a{:href => "#"} <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
   .col-md-6
-    %table.table.table-striped.table-hover
-      %thead
-        %h4 Inmuebles Solicitados Recientemente
-        %tr
-          %th Fecha
-          %th Titulo
-          %th Region/Zona
-          %th Precio ($))
-      %tbody
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column content
-          %td Column content
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column content
-          %td Column content
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column content
-          %td Column content
+    .panel.panel.panel-default
+      .panel-body
+        %table.table.table-striped.table-hover
+          %thead
+            %h4 Inmuebles Solicitados Recientemente
+            %tr
+              %th Fecha
+              %th Titulo
+              %th Region/Zona
+              %th Precio ($))
+          %tbody
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column content
+              %td Column content
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column content
+              %td Column content
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column content
+              %td Column content
+        .div.text-center
+          %ul.pagination.pagination-sm
+            %li.disabled
+              %a{:href => "#"} <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+            %li.active
+              %a{:href => "#"} 1
+            %li
+              %a{:href => "#"} 2
+            %li
+              %a{:href => "#"} 3
+            %li
+              %a{:href => "#"} <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
 .row
-  .col-md-6.jumbotron
+  .col-md-6
     %ul#interest_tabs.nav.nav-tabs
       / top level tabs
       %li
@@ -207,7 +235,7 @@
         %i dptos en alquiler
 
   .col-md-6
-    .panel.panel-primary
+    .panel.panel-success
       .panel-heading
         %h2.panel-title Agente de bienes raices?
       .panel-body
@@ -241,3 +269,15 @@
           %td Column content
           %td Column/content
           %td 7
+    .div.text-center
+      %ul.pagination.pagination-sm
+        %li.disabled
+          %a{:href => "#"} <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        %li.active
+          %a{:href => "#"} 1
+        %li
+          %a{:href => "#"} 2
+        %li
+          %a{:href => "#"} 3
+        %li
+          %a{:href => "#"} <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>

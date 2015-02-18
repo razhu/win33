@@ -6,24 +6,27 @@
         %b Paso 1: Ubicación e info del inmueble
     .row
       .col-md-6
-        .btn-group
-          %a.btn.btn-default{:href => "#"} Region
-          %a.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"} La Paz
-            %li
-              %a{:href => "#"} Cochabamba
-        .btn-group
-          %a.btn.btn-default{:href => "#"} Area
-          %a.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"} La Paz
-            %li
-              %a{:href => "#"} Cochabamba
+        .row
+          .col-md-6
+            .btn-group
+              %a.btn.btn-default{:href => "#"} Region
+              %a.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} La Paz
+                %li
+                  %a{:href => "#"} Cochabamba
+          .col-md-6
+            .btn-group
+              %a.btn.btn-default{:href => "#"} Area
+              %a.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} La Paz
+                %li
+                  %a{:href => "#"} Cochabamba
         = f.input :title, label: 'Titulo de la publicacion'
         = f.input :description, label: 'Descripción'
         = f.input :direction, label: 'Dirección'
