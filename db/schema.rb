@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20150212230150) do
     t.string   "slug"
     t.integer  "property_type_id"
     t.integer  "transaction_type_id"
+    t.integer  "location_id"
   end
 
   create_table "commontator_comments", force: true do |t|
@@ -169,7 +170,6 @@ ActiveRecord::Schema.define(version: 20150212230150) do
     t.string   "unconfirmed_email"
     t.integer  "role"
     t.string   "username"
-    t.string   "ubication_id"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
