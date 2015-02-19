@@ -18,17 +18,19 @@
           =link_to raw('<button type="button" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Solicitar Inmueble</button>'), '#'
       %ul.nav.navbar-nav.navbar-right
         = render 'layouts/navigation_links'
+        %li= link_to raw('<span class="glyphicon glyphicon-star" aria-hidden="true"></span> Profesionales'), new_user_registration_path
+        %li= link_to raw('<span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Foro'), new_user_registration_path
         %li.dropdown
           =link_to raw('<span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Ayuda <b class="caret"></b>'), '#', {:class => "dropdown-toggle", "aria-expanded" => "false", "data-toggle" => "dropdown"}
           %ul.dropdown-menu
             %li
-              =link_to 'Como Anunciar', '#'
-              =link_to 'Opciones de Pago', '#'
+              =link_to 'Como Anunciar', how_to_advertise_page_path
+              =link_to 'Opciones de Pago', payment_options_page_path
             %li.divider
             %li
               =link_to 'Contactenos', '#'
             %li
-              =link_to 'Acerca de', '#'
+              =link_to 'Acerca de', about_page_path
             %li.divider
             %li
               =link_to 'Switch to English', '#'

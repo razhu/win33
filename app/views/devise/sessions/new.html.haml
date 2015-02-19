@@ -1,18 +1,25 @@
-.raw
-  .col-md-12.form-centered
-    %h2= t('.sign_in', :default => "Sign in")
-    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-      %div
-        = f.label :email
-        %br/
-        = f.email_field :email
-      %div
-        = f.label :password
-        %br/
-        = f.password_field :password
-      - if devise_mapping.rememberable?
-        %div
-          = f.check_box :remember_me
-          = f.label :remember_me
-      %div= f.submit t('.sign_in', :default => "Sign in")
-    = render "devise/shared/links"
+.row
+  .col-md-4
+  .col-md-4.text-center
+    .panel.panel-primary
+      .panel-body
+        %h2= t('.sign_in', :default => "Sign in")
+        = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+          %div
+            = f.label :email
+            %br/
+            = f.email_field :email
+          %div
+            = f.label :password
+            %br/
+            = f.password_field :password
+          - if devise_mapping.rememberable?
+            %div
+              = f.check_box :remember_me
+              = f.label :remember_me
+          %div= f.submit t('.sign_in', :default => "Sign in")
+        = render "devise/shared/links"
+  .col-md-4
+    .jumbotron.panel-primary
+      %h3 Atencion!
+      %p Tiene 7 dias para activar su cuenta de casasmap en su email. Revise su bandeja de 'correo no deseado' o 'Spam'. Gracias.

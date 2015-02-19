@@ -89,18 +89,17 @@
   .col-md-12
     .slider.autoplay
       .multiple
-        = image_tag("terreno.jpg")
-        %h6 1
+        = image_tag("housetest.jpg")
+        %h6 Titulo anuncio 1
       .multiple
-        %h6 2
+        = image_tag("housetest.jpg")
+        %h6 Titulo anuncio 2
       .multiple
-        %h6 3
+        = image_tag("housetest.jpg")
+        %h6 Titulo anuncio 3
       .multiple
-        %h6 4
-      .multiple
-        %h6 5
-      .multiple
-        %h6 6
+        = image_tag("housetest.jpg")
+        %h6 Titulo anuncio 4
 %hr/
 .row
   .col-md-6
@@ -183,66 +182,68 @@
               %a{:href => "#"} <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
 .row
   .col-md-6
-    %ul#interest_tabs.nav.nav-tabs
-      / top level tabs
-      %li
-        %a{"data-toggle" => "tab", :href => "#all"} Todo
-      %li
-        %a{"data-toggle" => "tab", :href => "#brands"} Venta
-      %li
-        %a{"data-toggle" => "tab", :href => "#media"} Alquiler
-    / top level tab content
-    .tab-content
-      / all tab menu
-      #all.tab-pane
-        %ul#all_tabs.nav.nav-tabs
+    .panel.panel-default
+      .panel-body
+        %ul#interest_tabs.nav.nav-tabs
+          / top level tabs
           %li
-            %a{"data-toggle" => "tab", :href => "#all_popular"} Casa
+            %a{"data-toggle" => "tab", :href => "#all"} Todo
           %li
-            %a{"data-toggle" => "tab", :href => "#all_unique"} Dpto
-      / brands tab menu
-      #brands.tab-pane
-        %ul#brands_tabs.nav.nav-tabs
+            %a{"data-toggle" => "tab", :href => "#brands"} Venta
           %li
-            %a{"data-toggle" => "tab", :href => "#brands_popular"} Casas
-          %li
-            %a{"data-toggle" => "tab", :href => "#brands_unique"} Dpto
-      / media tab menu
-      #media.tab-pane
-        %ul#media_tabs.nav.nav-tabs
-          %li
-            %a{"data-toggle" => "tab", :href => "#media_popular"} Casas
-          %li
-            %a{"data-toggle" => "tab", :href => "#media_unique"} Dpto
+            %a{"data-toggle" => "tab", :href => "#media"} Alquiler
+        / top level tab content
+        .tab-content
+          / all tab menu
+          #all.tab-pane
+            %ul#all_tabs.nav.nav-tabs
+              %li
+                %a{"data-toggle" => "tab", :href => "#all_popular"} Casa
+              %li
+                %a{"data-toggle" => "tab", :href => "#all_unique"} Dpto
+          / brands tab menu
+          #brands.tab-pane
+            %ul#brands_tabs.nav.nav-tabs
+              %li
+                %a{"data-toggle" => "tab", :href => "#brands_popular"} Casas
+              %li
+                %a{"data-toggle" => "tab", :href => "#brands_unique"} Dpto
+          / media tab menu
+          #media.tab-pane
+            %ul#media_tabs.nav.nav-tabs
+              %li
+                %a{"data-toggle" => "tab", :href => "#media_popular"} Casas
+              %li
+                %a{"data-toggle" => "tab", :href => "#media_unique"} Dpto
 
-    / all tab content
-    .tab-content
-      #all_popular.tab-pane
-        %i todas las casas  aqui
-      #all_unique.tab-pane
-        %i todos los dptos aqui
-    / brands tab content
-    .tab-content
-      #brands_popular.tab-pane
-        %i casas en venta
-      #brands_unique.tab-pane
-        %i ventas dptos
-    / media tab content
-    .tab-content
-      #media_popular.tab-pane
-        %i casas alquiler
-      #media_unique.tab-pane
-        %i dptos en alquiler
+        / all tab content
+        .tab-content
+          #all_popular.tab-pane
+            %i todas las casas  aqui
+          #all_unique.tab-pane
+            %i todos los dptos aqui
+        / brands tab content
+        .tab-content
+          #brands_popular.tab-pane
+            %i casas en venta
+          #brands_unique.tab-pane
+            %i ventas dptos
+        / media tab content
+        .tab-content
+          #media_popular.tab-pane
+            %i casas alquiler
+          #media_unique.tab-pane
+            %i dptos en alquiler
 
   .col-md-6
     .panel.panel-success
       .panel-heading
-        %h2.panel-title Agente de bienes raices?
+        %h3.panel-title Agente de bienes raices?
       .panel-body
         Me falta oner imagen y descripcion de lujo para que se animen , etc etc
     .panel.panel-primary
       .panel-heading
-        %h2.panel-title Anunciante particular?
+        %h3.panel-title Anunciante particular?
       .panel-body
         Me falta poner imagen y descripcion de lujo para que se animen , etc etc
     %table.table.table-striped.table-hover
