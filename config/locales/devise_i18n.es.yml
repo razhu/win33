@@ -45,22 +45,22 @@ es:
         currently_waiting_confirmation_for_email: 'Actualmente esperando la confirmacion de: %{email} '
         leave_blank_if_you_don_t_want_to_change_it: dejar en blanco si no desea cambiarlo
         title: Editar %{resource}
-        unhappy: Infeliz
+        unhappy: Insatisfecho
         update: Actualizar
         we_need_your_current_password_to_confirm_your_changes: necesitamos su contraseña actual para confirmar los cambios
       new:
         sign_up: Registrarse
     sessions:
       new:
-        sign_in: Iniciar sésion
+        sign_in: Iniciar sesion
     shared:
       links:
         back: Atrás
         didn_t_receive_confirmation_instructions: "¿No ha recibido las instrucciones de confirmación?"
         didn_t_receive_unlock_instructions: No ha recibido instrucciones para desbloquear?
         forgot_your_password: "¿Ha olvidado su contraseña?"
-        sign_in: Iniciar sésion
-        sign_in_with_provider: Iniciar sésion con %{provider}
+        sign_in: Iniciar sesion
+        sign_in_with_provider: "   %{provider}"
         sign_up: Registrarse
     unlocks:
       new:

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "pages/about", :as => 'about_page'
   get "pages/payment_options", :as => 'payment_options_page'
   get "pages/how_to_advertise", :as => 'how_to_advertise_page'
+  get "pages/professional_account", :as => 'professional_account_page'
   resources :photos
 
   devise_for :admin_users, ActiveAdmin::Devise.config
