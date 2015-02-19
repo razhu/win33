@@ -5,8 +5,13 @@ class AdvertisesController < ApplicationController
   respond_to :html
 
   def index
-    @advertises = Advertise.all
-    respond_with(@advertises)
+    if !params[:search].nil?
+      @search = Advertise.ransack(search_params)
+      @advertises = @search.result
+    else
+      @advertises = Advertise.all
+    end
+    respond_with(@advertise)
   end
 
   def show
@@ -44,6 +49,9 @@ class AdvertisesController < ApplicationController
 
   def advertise_params
     params.require(:advertise).permit(:title, :description, :direction, :price, :negotiable, :credit, :price_, :m2, :name_contact, :phone_contact, :time_to_contact, :visits_number, :publish_date, :validate_date, )
+  end
+  def search_params
+    params.require(:search).permit(:id_eq)
   end
 
 end

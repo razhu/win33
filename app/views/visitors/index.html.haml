@@ -1,7 +1,8 @@
 .row
-  .titulo
-    %h1
-      %b Venda y Compre Inmuebles en Bolivia.
+  .col-md-12.text-center
+    .titulo
+      %h1
+        %b Venda y Compre Inmuebles en Bolivia.
 .row
   .col-md-2
     .btn-group
@@ -76,18 +77,15 @@
             %li
               %a{:href => "#"} 5
   .col-md-1
-    %a.btn.btn-primary{:href => "#", :role => "button"} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-  .col-md-2
-    %form.form-inline
-      .form-group
-      %input{:placeholder => "Codigo inmueble. Ej:123", :type => "text"}/
-  .col-md-1
-    %button.btn.btn-primary{:type => "submit"} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+    //%a.btn.btn-primary{:href => "#", :role => "button"} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+
+  .col-md-3
+    = simple_form_for :search, url: advertises_path, method: :get do |f|
+      = f.input :id_eq, label: 'Buscar:'
+      = f.submit "Search"
 %hr/
 .row
   .col-md-12
-    %hr/
-    %h2 Autoplay
     .slider.autoplay
       .multiple
         = image_tag("terreno.jpg")
@@ -105,57 +103,85 @@
 %hr/
 .row
   .col-md-6
-    %table.table.table-striped.table-hover
-      %thead
-        %h4 Inmuebles Ofertados Recientemente
-        %tr
-          %th Fecha
-          %th Titulo
-          %th Region/Zona
-          %th Precio ($))
-      %tbody
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column/content
-          %td Column content
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column/content
-          %td Column content
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column/content
-          %td Column content
+    .panel.panel.panel-default
+      .panel-body
+        %table.table.table-striped.table-hover
+          %thead
+            %h4 Inmuebles Ofertados Recientemente
+            %tr
+              %th Fecha
+              %th Titulo
+              %th Region/Zona
+              %th Precio ($))
+          %tbody
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column/content
+              %td Column content
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column/content
+              %td Column content
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column/content
+              %td Column content
+        .div.text-center
+          %ul.pagination.pagination-sm
+            %li.disabled
+              %a{:href => "#"} <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+            %li.active
+              %a{:href => "#"} 1
+            %li
+              %a{:href => "#"} 2
+            %li
+              %a{:href => "#"} 3
+            %li
+              %a{:href => "#"} <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
   .col-md-6
-    %table.table.table-striped.table-hover
-      %thead
-        %h4 Inmuebles Solicitados Recientemente
-        %tr
-          %th Fecha
-          %th Titulo
-          %th Region/Zona
-          %th Precio ($))
-      %tbody
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column content
-          %td Column content
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column content
-          %td Column content
-        %tr
-          %td 21/06
-          %td Column content
-          %td Column content
-          %td Column content
+    .panel.panel.panel-default
+      .panel-body
+        %table.table.table-striped.table-hover
+          %thead
+            %h4 Inmuebles Solicitados Recientemente
+            %tr
+              %th Fecha
+              %th Titulo
+              %th Region/Zona
+              %th Precio ($))
+          %tbody
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column content
+              %td Column content
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column content
+              %td Column content
+            %tr
+              %td 21/06
+              %td Column content
+              %td Column content
+              %td Column content
+        .div.text-center
+          %ul.pagination.pagination-sm
+            %li.disabled
+              %a{:href => "#"} <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+            %li.active
+              %a{:href => "#"} 1
+            %li
+              %a{:href => "#"} 2
+            %li
+              %a{:href => "#"} 3
+            %li
+              %a{:href => "#"} <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
 .row
-  .col-md-6.jumbotron
+  .col-md-6
     %ul#interest_tabs.nav.nav-tabs
       / top level tabs
       %li
@@ -208,7 +234,7 @@
         %i dptos en alquiler
 
   .col-md-6
-    .panel.panel-primary
+    .panel.panel-success
       .panel-heading
         %h2.panel-title Agente de bienes raices?
       .panel-body
@@ -242,3 +268,15 @@
           %td Column content
           %td Column/content
           %td 7
+    .div.text-center
+      %ul.pagination.pagination-sm
+        %li.disabled
+          %a{:href => "#"} <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        %li.active
+          %a{:href => "#"} 1
+        %li
+          %a{:href => "#"} 2
+        %li
+          %a{:href => "#"} 3
+        %li
+          %a{:href => "#"} <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>

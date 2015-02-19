@@ -2,13 +2,32 @@
   = f.error_notification
   .form-inputs
     .row
-      .col-md-12
-        %h3
-          %b Paso 1: Ubicación e info del inmueble
+      %h3
+        %b Paso 1: Ubicación e info del inmueble
     .row
       .col-md-6
-<<<<<<< HEAD
         %h1 Paso 1: Ubicación e info del inmueble
+        .row
+          .col-md-6
+            .btn-group
+              %a.btn.btn-default{:href => "#"} Region
+              %a.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} La Paz
+                %li
+                  %a{:href => "#"} Cochabamba
+          .col-md-6
+            .btn-group
+              %a.btn.btn-default{:href => "#"} Area
+              %a.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} La Paz
+                %li
+                  %a{:href => "#"} Cochabamba
         = f.input :title, label: 'Titulo de la publicacion'
         = f.input :description, label: 'Descripción'
         = f.input :direction, label: 'Dirección'
@@ -19,12 +38,11 @@
         -#= f.association :property_type
         -#= f.association :transaction_type
         %br/
-=======
+
 
         = f.input :title, label: 'Titulo'
         = f.input :description, label: 'Descripción'
         = f.input :direction, label: 'Dirección'
->>>>>>> c9c5c1ade1c764973e55be6eda78865fc690e56e
         = f.input :price, label: 'Precio'
         .row
           .col-md-4
@@ -33,7 +51,6 @@
             = f.input :credit, label: 'Financiamiento'
           .col-md-4
             = f.input :price_m2, label: 'm2'
-        = f.association :property_type
       .col-md-6
         .panel.panel-primary
           .panel-heading
@@ -53,14 +70,29 @@
     .row
       .col-md-12
         %h3
-          %b Paso 3: Fotos y videos
+          %b Paso 3: Subir Fotos y videos
+        %h4
+          %b Fotos
+        %h4
+          %b Videos
     .row
-      .col-md-6
-        %input#user_options_true{:name => "acceptance", :type => "checkbox", :value => "true"}/
-        %label.collection_check_box{:for => "acceptance_true"}   Acepto terminos y condiciones
-      .col-md-6
-        something goes here
+      %input#user_options_true{:name => "acceptance", :type => "checkbox", :value => "true"}/
+      %label.collection_check_box{:for => "acceptance_true"}   Acepto terminos y condiciones
     .row
-      .col-md-12
+      .col-md-12.text-center
         .form-actions
-        = f.submit 'Crear'
+        = f.submit 'Descartar e Ir a Pagina Principal', {:class => "btn btn-danger btn-lg", "data-toggle" => "modal", "data-target" => "#myModal"}
+        #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+          .modal-dialog
+            .modal-content
+              .modal-header
+                %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+                  %span{"aria-hidden" => "true"} &times;
+                %h4#myModalLabel.modal-title Cancelar anuncio?
+              .modal-body
+                Estas Seguro bla bla
+              .modal-footer
+                %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                %button.btn.btn-primary{:type => "button"} Save changes
+        = f.submit 'Guardar Para Publicar Luego', {:class => "btn btn-warning btn-lg"}
+        = f.submit 'Publicar Anuncio Ahora', {:class => "btn btn-success btn-lg"}

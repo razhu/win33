@@ -33,6 +33,7 @@ gem 'ancestry'
 gem 'mini_magick'
 gem 'refile', require: ["refile/rails", "refile/image_processing"]
 gem 'pundit'
+gem 'ransack'
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'

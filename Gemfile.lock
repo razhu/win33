@@ -462,6 +462,7 @@ DEPENDENCIES
   rails (= 4.1.8)
   rails-i18n
   rails_layout
+  ransack
   rb-fchange
   rb-fsevent
   rb-inotify

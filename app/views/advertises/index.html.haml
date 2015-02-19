@@ -1,5 +1,7 @@
 %h1 Listing advertises
-
+= simple_form_for :search, url: advertises_path, method: :get do |f|
+  = f.input :id_eq, label: 'Buscar:'
+  = f.submit "Search"
 %table
   %thead
     %tr
@@ -16,7 +18,7 @@
       %th Visits number
       %th Publish date
       %th Validate date
-      %th
+      %th Code
       %th
       %th
       
@@ -36,6 +38,7 @@
         %td= advertise.visits_number
         %td= advertise.publish_date
         %td= advertise.validate_date
+        %td= advertise.code
         %td= link_to 'Show', advertise
         %td= link_to 'Edit', edit_advertise_path(advertise)
         %td= link_to 'Destroy', advertise, :method => :delete, :data => { :confirm => 'Are you sure?' }
