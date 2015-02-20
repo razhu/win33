@@ -3,103 +3,46 @@
     .titulo
       %h1
         %b Venda y Compre Inmuebles en Bolivia.
-.row
-  .col-md-2
-    .btn-group
-      %ul.nav.nav-pills.nav-stacked
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
-            Comprar
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"} Venta
-            %li
-              %a{:href => "#"} Compra
-            %li
-              %a{:href => "#"} Anticretico
-  .col-md-2
-    .btn-group
-      %ul.nav.nav-pills.nav-stacked
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
-            Casas
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"} Casa
-            %li
-              %a{:href => "#"} Edificio
-            %li
-              %a{:href => "#"} Departamento
-            %li
-              %a{:href => "#"} Oficina
-            %li
-              %a{:href => "#"} Terreno
-            %li
-              %a{:href => "#"} Garaje
-            %li
-              %a{:href => "#"} Baulera
-            %a{:href => "#"} Baulera
-  .col-md-2
-    .btn-group
-      %ul.nav.nav-pills.nav-stacked
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
-            Region
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"} Santa cruz
-            %li
-              %a{:href => "#"} Cochabamba
-            %li
-              %a{:href => "#"} La Paz
-            %li.divider
-            %li
-              %a{:href => "#"} El Alto
-  .col-md-2
-    .btn-group
-      %ul.nav.nav-pills.nav-stacked
-        %li.dropdown
-          %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
-            Area
-            %span.caret
-          %ul.dropdown-menu
-            %li
-              %a{:href => "#"} 1
-            %li
-              %a{:href => "#"} 2
-            %li
-              %a{:href => "#"} 3
-            %li
-              %a{:href => "#"} 4
-            %li
-              %a{:href => "#"} 5
-  .col-md-1
-    %a.btn.btn-primary{:href => "#", :role => "button"} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-  .col-md-2
-    %form.form-inline
-      .form-group
-      %input{:placeholder => "Codigo inmueble. Ej:123", :type => "text"}/
-  .col-md-1
-    %button.btn.btn-primary{:type => "submit"} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 %hr/
 .row
   .col-md-12
     .slider.autoplay
       .multiple
         = image_tag("housetest.jpg")
-        %h6 Titulo anuncio 1
+        .row
+          .col-md-6
+            %h6 Titulo anuncio 1
+          .col-md-2
+            %h6.b 100000
+          .col-md-4
+            %h6 SCZ/abdfads
       .multiple
         = image_tag("housetest.jpg")
-        %h6 Titulo anuncio 2
+        .row
+          .col-md-6
+            %h6 Titulo anuncio 2
+          .col-md-2
+            %h6.b 100000
+          .col-md-4
+            %h6 SCZ/abdfads
       .multiple
         = image_tag("housetest.jpg")
-        %h6 Titulo anuncio 3
+        .row
+          .col-md-6
+            %h6 Titulo anuncio 3
+          .col-md-2
+            %h6.b 100000
+          .col-md-4
+            %h6 SCZ/abdfads
       .multiple
         = image_tag("housetest.jpg")
-        %h6 Titulo anuncio 4
+        .row
+          .col-md-6
+            %h6 Titulo anuncio 4
+          .col-md-2
+            %h6.b 100000
+          .col-md-4
+            %h6 SCZ/abdfads
 %hr/
 .row
   .col-md-6
@@ -236,16 +179,16 @@
             %i dptos en alquiler
 
   .col-md-6
-    .panel.panel-success
-      .panel-heading
-        %h3.panel-title Agente de bienes raices?
-      .panel-body
+    .jumbotron
+      %h2 Agente de bienes raices?
+      %p
         Me falta oner imagen y descripcion de lujo para que se animen , etc etc
     .panel.panel-primary
       .panel-heading
         %h3.panel-title Anunciante particular?
       .panel-body
         Me falta poner imagen y descripcion de lujo para que se animen , etc etc
+        %a.btn.btn-primary.btn-lg{:href => "#"} Mas info
     %table.table.table-striped.table-hover
       %thead
         %h4 Foro
