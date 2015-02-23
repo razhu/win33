@@ -1,0 +1,84 @@
+%br/
+.panel.panel.panel-default
+  .panel-body
+    .row
+      .col-md-2
+        .btn-group
+          %ul.nav.nav-pills.nav-stacked
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                Comprar
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} Venta
+                %li
+                  %a{:href => "#"} Compra
+                %li
+                  %a{:href => "#"} Anticretico
+      .col-md-2
+        .btn-group
+          %ul.nav.nav-pills.nav-stacked
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                Casas
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} Casa
+                %li
+                  %a{:href => "#"} Edificio
+                %li
+                  %a{:href => "#"} Departamento
+                %li
+                  %a{:href => "#"} Oficina
+                %li
+                  %a{:href => "#"} Terreno
+                %li
+                  %a{:href => "#"} Garaje
+                %li
+                  %a{:href => "#"} Baulera
+                %a{:href => "#"} Baulera
+      .col-md-2
+        .btn-group
+          %ul.nav.nav-pills.nav-stacked
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                Region
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} Santa cruz
+                %li
+                  %a{:href => "#"} Cochabamba
+                %li
+                  %a{:href => "#"} La Paz
+                %li.divider
+                %li
+                  %a{:href => "#"} El Alto
+      .col-md-2
+        .btn-group
+          %ul.nav.nav-pills.nav-stacked
+            %li.dropdown
+              %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                Area
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} 1
+                %li
+                  %a{:href => "#"} 2
+                %li
+                  %a{:href => "#"} 3
+                %li
+                  %a{:href => "#"} 4
+                %li
+                  %a{:href => "#"} 5
+      .col-md-1
+        %a.btn.btn-primary{:href => "#", :role => "button"} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+      .col-md-2
+        %form.form-inline
+          .form-group
+          %input{:placeholder => "Codigo inmueble. Ej:123", :type => "text"}/
+      .col-md-1
+        %button.btn.btn-primary{:type => "submit"} <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
