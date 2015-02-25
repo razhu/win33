@@ -51,6 +51,21 @@
           .panel-body
             = f.input :negotiable, label: 'Sin Marca'
             =image_tag('mapa.png')
+        CARACTERISTICAS:
+        .panel.panel-primary
+          .panel-heading
+            %h3.panel-title Ambientes
+          .panel-body
+            - Feature.ambientes.each do |feature|
+              = f.check_box :feature_ids
+              = feature.description
+        .panel.panel-primary
+          .panel-heading
+            %h3.panel-title Comodidades
+          .panel-body
+            - Feature.comodidades.each do |feature|
+              = f.check_box :feature_ids
+              = feature.description
     .row
       .col-md-12
         %h3

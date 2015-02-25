@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :features
+
   # getting static pages
   get "pages/about", :as => 'about_page'
   get "pages/payment_options", :as => 'payment_options_page'
