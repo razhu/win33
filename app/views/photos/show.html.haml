@@ -1,13 +1,13 @@
 %p#notice= notice
 
 %p
-  %b Ubication:
-  = @photo.ubication
+  %b Image:
+  = @photo.image
 %p
-  %b Genre:
-  = @photo.genre
+  %b Description:
+  = @photo.description
 
-= image_tag attachment_url(@photo, :ubication )
+= image_tag attachment_url(@photo, :image)
 
 = link_to 'Edit', edit_photo_path(@photo)
 \|

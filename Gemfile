@@ -35,6 +35,7 @@ gem 'pundit'
 gem 'ransack'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
+gem 'cocoon'
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'

@@ -1,3 +1,4 @@
 class Photo < ActiveRecord::Base
-  attachment :ubication
+  attachment :image
+  belongs_to :advertise
 end

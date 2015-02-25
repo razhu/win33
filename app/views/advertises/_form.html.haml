@@ -31,10 +31,8 @@
         = f.input :title, label: 'Titulo de la publicacion'
         = f.input :description, label: 'Descripción'
         = f.input :direction, label: 'Dirección'
-        = f.fields_for :property_type do |p|
-          = p.input :property_type, collection: PropertyType.all_types, label: 'Tipo de propiedad'
-        = f.fields_for :transacion_type do |p|
-          = p.input :transacion_type, collection: TransactionType.all_types, label: 'Tipo de transacción'
+        = f.input :property_type_id, collection: PropertyType.all_types, label: 'Tipo de propiedad'
+        = f.input :transaction_type_id, collection: TransactionType.all_types, label: 'Tipo de transacción'
 
         %br/
 
@@ -59,20 +57,22 @@
           %b Paso 2: Info de contacto
     .row
       .col-md-6
-        = f.fields_for :user, current_user do |t|
-          = t.input :id, as: :hidden
-          = t.input :email
-        -#= f.input :name_contact, label: 'Nombre de contacto'
-        -#= f.input :phone_contact, label: 'Telefono de contacto'
-        -#= f.input :time_to_contact, label: 'Hora preferida para ser contactado'
+        = f.input :user_id, as: :hidden, input_html: {value: current_user.identification}
+        = f.input :name_contact, label: 'Nombre de contacto'
+        = f.input :phone_contact, label: 'Telefono de referencia'
+        = f.input :time_to_contact, label: 'Hora preferida para ser contactado'
     .row
       .col-md-12
         %h3
           %b Paso 3: Subir Fotos y videos
         %h4
           %b Fotos
-        %h4
-          %b Videos
+          = f .simple_fields_for :photos do |photo|
+            = render 'advertises/photo_fields', :f => photo
+          .links
+            = link_to_add_association 'Agregar foto ', f, :photos
+      %h4
+        %b Videos
     .row
       %input#user_options_true{:name => "acceptance", :type => "checkbox", :value => "true"}/
       %label.collection_check_box{:for => "acceptance_true"}   Acepto terminos y condiciones

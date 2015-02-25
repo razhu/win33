@@ -7,5 +7,8 @@ class Advertise < ActiveRecord::Base
   belongs_to :transaction_type
   belongs_to :location
 
+  has_many :photos
+  accepts_nested_attributes_for :photos, :reject_if => :all_blank, :allow_destroy => true
+
 end
 
