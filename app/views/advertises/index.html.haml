@@ -1,5 +1,8 @@
 %h1 Listing advertises
-
+= paginate @advertises, :theme => 'twitter-bootstrap-3'
+= simple_form_for :search, url: advertises_path, method: :get do |f|
+  = f.input :id_eq, label: 'Buscar:'
+  = f.submit "Search"
 %table
   %thead
     %tr
@@ -16,8 +19,8 @@
       %th Visits number
       %th Publish date
       %th Validate date
-      %th
-      %th
+      %th Code
+      %th user_id
       %th
       
   %tbody
@@ -36,6 +39,8 @@
         %td= advertise.visits_number
         %td= advertise.publish_date
         %td= advertise.validate_date
+        %td= advertise.code
+        %td= advertise.user_id
         %td= link_to 'Show', advertise
         %td= link_to 'Edit', edit_advertise_path(advertise)
         %td= link_to 'Destroy', advertise, :method => :delete, :data => { :confirm => 'Are you sure?' }

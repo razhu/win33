@@ -65,6 +65,9 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap-sass (3.3.3)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -421,6 +424,7 @@ DEPENDENCIES
   activerecord-postgis-adapter
   ancestry
   better_errors
+  bootstrap-kaminari-views
   bootstrap-sass
   bootswatch-rails
   capistrano (~> 3.0.1)
@@ -448,6 +452,7 @@ DEPENDENCIES
   html2haml
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   launchy
   mini_magick
   omniauth
@@ -462,6 +467,7 @@ DEPENDENCIES
   rails (= 4.1.8)
   rails-i18n
   rails_layout
+  ransack
   rb-fchange
   rb-fsevent
   rb-inotify

@@ -34,8 +34,9 @@
           = p.input :property_type, collection: PropertyType.all_types, label: 'Tipo de propiedad'
         = f.fields_for :transacion_type do |p|
           = p.input :transacion_type, collection: TransactionType.all_types, label: 'Tipo de transacción'
-        -#= f.association :property_type
-        -#= f.association :transaction_type
+
+        %br/
+
         = f.input :price, label: 'Precio'
         .row
           .col-md-4
@@ -57,9 +58,12 @@
           %b Paso 2: Info de contacto
     .row
       .col-md-6
-        = f.input :name_contact, label: 'Nombre de contacto'
-        = f.input :phone_contact, label: 'Telefono de contacto'
-        = f.input :time_to_contact, label: 'Hora preferida para ser contactado'
+        = f.fields_for :user, current_user do |t|
+          = t.input :id, as: :hidden
+          = t.input :email
+        -#= f.input :name_contact, label: 'Nombre de contacto'
+        -#= f.input :phone_contact, label: 'Telefono de contacto'
+        -#= f.input :time_to_contact, label: 'Hora preferida para ser contactado'
     .row
       .col-md-12
         %h3
@@ -68,9 +72,10 @@
           %b Fotos
         %h4
           %b Videos
-    .row
+    .row.text-center
       %input#user_options_true{:name => "acceptance", :type => "checkbox", :value => "true"}/
-      %label.collection_check_box{:for => "acceptance_true"}   Acepto terminos y condiciones
+      %label.collection_check_box{:for => "acceptance_true"}
+        =link_to ("Acepto los terminos y condiciones"), terms_and_conditions_page_path, target: "_blank"
     .row
       .col-md-12.text-center
         .form-actions

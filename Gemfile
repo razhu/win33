@@ -15,7 +15,6 @@ gem 'devise'
 gem 'haml-rails'
 gem 'high_voltage'
 gem 'pg'
-gem 'pundit'
 gem 'simple_form'
 gem 'bootswatch-rails'
 gem 'forem'
@@ -32,6 +31,11 @@ gem 'font-awesome-rails'
 gem 'ancestry'
 gem 'mini_magick'
 gem 'refile', require: ["refile/rails", "refile/image_processing"]
+gem 'pundit'
+gem 'ransack'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'
@@ -51,6 +55,7 @@ group :development do
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
@@ -59,6 +64,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'

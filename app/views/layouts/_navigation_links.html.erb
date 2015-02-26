@@ -1,10 +1,10 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
-  <li><%= link_to 'Perfil', edit_user_registration_path %></li>
-  <li><%= link_to 'Salir', destroy_user_session_path, :method=>'delete' %></li>
+  <li><%= link_to raw('<i class="fa fa-user"></i> Perfil'), edit_user_registration_path %></li>
+  <li><%= link_to raw('<i class="fa fa-sign-out"></i> Salir'), destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
-  <li><%= link_to 'Ingresar', new_user_session_path %></li>
-  <li><%= link_to 'Registrarse', new_user_registration_path %></li>
+  <li><%= link_to raw('<i class="fa fa-sign-in"></i> Ingresar'), new_user_session_path %></li>
+  <li><%= link_to raw('<i class="fa fa-user-plus"></i> Registrarse'), new_user_registration_path %></li>
 <% end %>
 <% if user_signed_in? %>
   <% if current_user.admin? %>
