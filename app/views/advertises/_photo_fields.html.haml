@@ -1,0 +1,6 @@
+.nested-fields.well
+  = f.attachment_field :image
+  .form-inputs
+    = f.input :description, label: 'Descripción'
+  .form-actions
+  = link_to_remove_association "Quitar foto", f

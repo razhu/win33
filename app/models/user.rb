@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :advertises
+  accepts_nested_attributes_for :advertises
   enum role: [:user, :vip, :admin]
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
@@ -62,6 +64,10 @@ class User < ActiveRecord::Base
 
   def email_verified?
     self.email && self.email !~ TEMP_EMAIL_REGEX
+  end
+
+  def identification
+    self.id
   end
 
 

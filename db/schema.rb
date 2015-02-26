@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211201655) do
+ActiveRecord::Schema.define(version: 20150225200811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,14 @@ ActiveRecord::Schema.define(version: 20150211201655) do
     t.string   "slug"
     t.integer  "property_type_id"
     t.integer  "transaction_type_id"
+    t.integer  "location_id"
+    t.string   "code"
+    t.integer  "user_id"
+  end
+
+  create_table "advertises_features", id: false, force: true do |t|
+    t.integer "advertise_id"
+    t.integer "feature_id"
   end
 
   create_table "commontator_comments", force: true do |t|
@@ -112,6 +120,13 @@ ActiveRecord::Schema.define(version: 20150211201655) do
 
   add_index "commontator_threads", ["commontable_id", "commontable_type"], :name => "index_commontator_threads_on_c_id_and_c_type", :unique => true
 
+  create_table "features", force: true do |t|
+    t.string   "feature_type"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "identities", force: true do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -121,6 +136,22 @@ ActiveRecord::Schema.define(version: 20150211201655) do
   end
 
   add_index "identities", ["user_id"], :name => "index_identities_on_user_id"
+
+  create_table "locations", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ancestry"
+  end
+
+  create_table "photos", force: true do |t|
+    t.string   "image_id"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "ubication_id"
+    t.integer  "advertise_id"
+  end
 
   create_table "property_types", force: true do |t|
     t.string   "property_type"

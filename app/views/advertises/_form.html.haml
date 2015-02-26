@@ -2,37 +2,110 @@
   = f.error_notification
   .form-inputs
     .row
+      %h3
+        %b Paso 1: Ubicación e info del inmueble
+    .row
       .col-md-6
         %h1 Paso 1: Ubicación e info del inmueble
+        .row
+          .col-md-6
+            .btn-group
+              %a.btn.btn-default{:href => "#"} Region
+              %a.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} La Paz
+                %li
+                  %a{:href => "#"} Cochabamba
+          .col-md-6
+            .btn-group
+              %a.btn.btn-default{:href => "#"} Area
+              %a.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#"}
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:href => "#"} La Paz
+                %li
+                  %a{:href => "#"} Cochabamba
         = f.input :title, label: 'Titulo de la publicacion'
         = f.input :description, label: 'Descripción'
         = f.input :direction, label: 'Dirección'
+        = f.input :property_type_id, collection: PropertyType.all_types, label: 'Tipo de propiedad'
+        = f.input :transaction_type_id, collection: TransactionType.all_types, label: 'Tipo de transacción'
+
         %br/
+
         = f.input :price, label: 'Precio'
         .row
-          = f.association :property_type
           .col-md-4
             = f.input :negotiable, label: 'Negociable'
           .col-md-4
             = f.input :credit, label: 'Financiamiento'
           .col-md-4
             = f.input :price_m2, label: 'm2'
-        %br/
-        %h1 Paso 2: Info de contacto
-        = f.input :name_contact, label: 'Nombre de contacto'
-        = f.input :phone_contact, label: 'Telefono de contacto'
-        = f.input :time_to_contact, label: 'Hora preferida para ser contactado'
-        %br/
-        %h1 Paso 3: Fotos y videos
-        %h1 Fotos interior
-        %h1 Fotos exterior
-        %br/
-        %input#user_options_true{:name => "acceptance", :type => "checkbox", :value => "true"}/
-        %label.collection_check_box{:for => "acceptance_true"}   Acepto terminos y condiciones
       .col-md-6
-        = image_tag('casamaplogo.png')
-        %h1 Caracteristicas
+        .panel.panel-primary
+          .panel-heading
+            %h3.panel-title Mapa
+          .panel-body
+            = f.input :negotiable, label: 'Sin Marca'
+            =image_tag('mapa.png')
+        CARACTERISTICAS:
+        .panel.panel-primary
+          .panel-heading
+            %h3.panel-title Ambientes
+          .panel-body
+            - Feature.ambientes.each do |feature|
+              = f.check_box :feature_ids
+              = feature.description
+        .panel.panel-primary
+          .panel-heading
+            %h3.panel-title Comodidades
+          .panel-body
+            - Feature.comodidades.each do |feature|
+              = f.check_box :feature_ids
+              = feature.description
     .row
       .col-md-12
+        %h3
+          %b Paso 2: Info de contacto
+    .row
+      .col-md-6
+        = f.input :user_id, as: :hidden, input_html: {value: current_user.identification}
+        = f.input :name_contact, label: 'Nombre de contacto'
+        = f.input :phone_contact, label: 'Telefono de referencia'
+        = f.input :time_to_contact, label: 'Hora preferida para ser contactado'
+    .row
+      .col-md-12
+        %h3
+          %b Paso 3: Subir Fotos y videos
+        %h4
+          %b Fotos
+          = f .simple_fields_for :photos do |photo|
+            = render 'advertises/photo_fields', :f => photo
+          .links
+            = link_to_add_association 'Agregar foto ', f, :photos
+      %h4
+        %b Videos
+    .row
+      %input#user_options_true{:name => "acceptance", :type => "checkbox", :value => "true"}/
+      %label.collection_check_box{:for => "acceptance_true"}   Acepto terminos y condiciones
+    .row
+      .col-md-12.text-center
         .form-actions
-        = f.submit 'Crear'
+        = f.submit 'Descartar e Ir a Pagina Principal', {:class => "btn btn-danger btn-lg", "data-toggle" => "modal", "data-target" => "#myModal"}
+        #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+          .modal-dialog
+            .modal-content
+              .modal-header
+                %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+                  %span{"aria-hidden" => "true"} &times;
+                %h4#myModalLabel.modal-title Cancelar anuncio?
+              .modal-body
+                Estas Seguro bla bla
+              .modal-footer
+                %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
+                %button.btn.btn-primary{:type => "button"} Save changes
+        = f.submit 'Guardar Para Publicar Luego', {:class => "btn btn-warning btn-lg"}
+        = f.submit 'Publicar Anuncio Ahora', {:class => "btn btn-success btn-lg"}
