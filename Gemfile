@@ -36,6 +36,7 @@ gem 'ransack'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'cocoon'
+
 group :development do
   gem 'better_errors'
   gem 'capistrano', '~> 3.0.1'
@@ -55,6 +56,7 @@ group :development do
   gem 'rb-inotify', :require=>false
   gem 'spring-commands-rspec'
 end
+
 group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
@@ -64,6 +66,7 @@ group :development, :test do
   gem 'rubocop'
   gem "rails_best_practices"
 end
+
 group :test do
   gem 'capybara'
   gem 'database_cleaner'

@@ -6,7 +6,6 @@
         %b Paso 1: Ubicación e info del inmueble
     .row
       .col-md-6
-        %h1 Paso 1: Ubicación e info del inmueble
         .row
           .col-md-6
             .btn-group
@@ -82,6 +81,7 @@
           %b Paso 3: Subir Fotos y videos
         %h4
           %b Fotos
+
           = f .simple_fields_for :photos do |photo|
             = render 'advertises/photo_fields', :f => photo
           .links
@@ -89,8 +89,13 @@
       %h4
         %b Videos
     .row
+      %h4
+        %b Videos
+    .row.text-center
+
       %input#user_options_true{:name => "acceptance", :type => "checkbox", :value => "true"}/
-      %label.collection_check_box{:for => "acceptance_true"}   Acepto terminos y condiciones
+      %label.collection_check_box{:for => "acceptance_true"}
+        =link_to ("Acepto los terminos y condiciones"), terms_and_conditions_page_path, target: "_blank"
     .row
       .col-md-12.text-center
         .form-actions
