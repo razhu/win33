@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20150225200811) do
     t.string   "slug"
     t.integer  "property_type_id"
     t.integer  "transaction_type_id"
+    t.integer  "location_id"
     t.string   "code"
     t.integer  "user_id"
   end

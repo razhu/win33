@@ -1,8 +1,8 @@
 class TransactionType < ActiveRecord::Base
   has_many :advertises
   def self.all_types
-    array=[]
-    property=TransactionType.all
+    array = []
+    property = TransactionType.all
     property.each do |p|
       array << [p.transaction_type, p.id]
     end
@@ -10,5 +10,4 @@ class TransactionType < ActiveRecord::Base
   rescue
     return []
   end
-
 end

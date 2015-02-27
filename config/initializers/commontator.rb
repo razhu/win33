@@ -80,8 +80,6 @@ Commontator.configure do |config|
   # Default: lambda { |user, mailer| user.try(:email) || '' }
   config.user_email_proc = lambda { |user, mailer| user.try(:email) || '' }
 
-
-
   # Thread/Commontable (acts_as_commontable) Configuration
 
   # comment_filter

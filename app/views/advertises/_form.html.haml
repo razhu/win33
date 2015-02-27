@@ -56,14 +56,14 @@
             %h3.panel-title Ambientes
           .panel-body
             - Feature.ambientes.each do |feature|
-              = f.check_box :feature_ids
+              = check_box_tag 'advertise[feature_ids][]', feature.id
               = feature.description
         .panel.panel-primary
           .panel-heading
             %h3.panel-title Comodidades
           .panel-body
             - Feature.comodidades.each do |feature|
-              = f.check_box :feature_ids
+              = check_box_tag 'advertise[feature_ids][]', feature.id
               = feature.description
     .row
       .col-md-12

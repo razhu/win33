@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   def self.find_for_oauth(auth, signed_in_resource = nil)
-
     # Get the identity and user if they exist
     identity = Identity.find_for_oauth(auth)
 
@@ -47,7 +46,7 @@ class User < ActiveRecord::Base
             name: auth.extra.raw_info.name,
             #username: auth.info.nickname || auth.uid,
             email: email ? email : "#{TEMP_EMAIL_PREFIX}-#{auth.uid}-#{auth.provider}.com",
-            password: Devise.friendly_token[0,20]
+            password: Devise.friendly_token[0, 20]
         )
         user.skip_confirmation!
         user.save!
@@ -69,6 +68,4 @@ class User < ActiveRecord::Base
   def identification
     self.id
   end
-
-
 end
