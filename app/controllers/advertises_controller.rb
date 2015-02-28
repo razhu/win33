@@ -27,7 +27,7 @@ class AdvertisesController < ApplicationController
   end
 
   def create
-    debugger
+    params[:advertise][feature_ids][0]
     @advertise = Advertise.new(advertise_params)
     @advertise.save
     respond_with(@advertise)
@@ -44,6 +44,7 @@ class AdvertisesController < ApplicationController
   end
 
   private
+
   def set_advertise
     @advertise = Advertise.friendly.find(params[:id])
   end
@@ -66,10 +67,11 @@ class AdvertisesController < ApplicationController
                                       :publish_date,
                                       :validate_date,
                                       :user_id,
+                                      feature_ids: [],
                                       photos_attributes: [:image, :description])
   end
+
   def search_params
     params.require(:search).permit(:id_eq)
   end
-
 end

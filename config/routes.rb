@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "pages/payment_options", :as => 'payment_options_page'
   get "pages/how_to_advertise", :as => 'how_to_advertise_page'
   get "pages/professional_account", :as => 'professional_account_page'
+  get "pages/terms_and_conditions", :as => 'terms_and_conditions_page'
   resources :photos
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -17,5 +18,4 @@ Rails.application.routes.draw do
   resources :users
   match '/user/:id/finish_signup' => 'user#finish_signup', via: [:get, :patch], :as => :finish_signup
   mount Commontator::Engine => '/commontator'
-
 end

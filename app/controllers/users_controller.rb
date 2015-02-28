@@ -16,9 +16,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     authorize @user
     if @user.update_attributes(secure_params)
-      redirect_to users_path, :notice => "User updated."
+      redirect_to users_path, :notice => 'User updated.'
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      redirect_to users_path, :alert => 'Unable to update user.'
     end
   end
 
@@ -26,12 +26,12 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     authorize user
     user.destroy
-    redirect_to users_path, :notice => "User deleted."
+    redirect_to users_path, :notice => 'User deleted.'
   end
 
   def finish_signup
     # authorize! :update, @user
-    if request.patch? && params[:user] #&& params[:user][:email]
+    if request.patch? && params[:user] # && params[:user][:email]
       if @user.update(user_params)
         @user.skip_reconfirmation!
         sign_in(@user, :bypass => true)
@@ -47,5 +47,4 @@ class UsersController < ApplicationController
   def secure_params
     params.require(:user).permit(:role)
   end
-
 end

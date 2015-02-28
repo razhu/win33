@@ -3,5 +3,4 @@ FactoryGirl.define do
     advertises_id 1
 features_id 1
   end
-
 end

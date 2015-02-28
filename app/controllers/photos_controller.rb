@@ -1,5 +1,4 @@
 class PhotosController < InheritedResources::Base
-
   private
 
     def photo_params
@@ -8,4 +7,3 @@ class PhotosController < InheritedResources::Base
                                     :advertise_id)
     end
 end
-

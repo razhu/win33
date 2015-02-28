@@ -18,8 +18,6 @@ puts 'CREATED ADMIN USER: ' << user.email
       phone_contact: Faker::PhoneNumber.phone_number,
       negotiable: Faker::Number.digit % 2
 
-
-
   )
 end
 puts "created 100 advertises"

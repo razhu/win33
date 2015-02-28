@@ -100,7 +100,6 @@ SimpleForm.setup do |config|
     b.optional :readonly
 
     b.use :label, class: 'col-sm-3 control-label'
-
     b.wrapper tag: 'div', class: 'col-sm-9' do |ba|
       ba.use :input
       ba.use :error, wrap_with: { tag: 'span', class: 'help-block' }
