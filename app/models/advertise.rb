@@ -13,5 +13,6 @@ class Advertise < ActiveRecord::Base
 
   has_and_belongs_to_many :features
 
-
+  validates :price, numericality: { greater_than: 0 }
+  validates :title, :description, presence: true
 end
