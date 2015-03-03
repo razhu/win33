@@ -137,6 +137,25 @@ GEM
     database_cleaner (1.4.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
+    dev (2.0.41)
+      dev_projects (~> 0.0.26)
+      dev_tasks (~> 1.0.44)
+      rspec (~> 3.0)
+    dev_commands (0.0.58)
+      rake (~> 10.0)
+    dev_environment (0.0.15)
+      rspec (>= 0.0.23)
+    dev_git (0.0.2)
+    dev_msbuild (0.0.0)
+    dev_projects (0.0.26)
+      dev_commands (~> 0.0.0, >= 0.0.58)
+      dev_environment (~> 0.0.15)
+      dev_git (~> 0.0.2)
+      dev_msbuild (~> 0.0.0)
+      dev_svn (~> 0.0.10)
+    dev_svn (0.0.10)
+    dev_tasks (1.0.44)
+      rspec (>= 0.0.13)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -489,6 +508,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   commontator
   database_cleaner
+  dev
   devise
   devise-i18n
   factory_girl_rails
