@@ -68,7 +68,8 @@ class AdvertisesController < ApplicationController
                                       :validate_date,
                                       :user_id,
                                       feature_ids: [],
-                                      photos_attributes: [:image, :description])
+                                      photos_attributes: [:image, :description],
+                                      locations_attributes: [:name, :ancestry])
   end
 
   def search_params
