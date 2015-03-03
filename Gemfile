@@ -66,6 +66,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rubocop'
   gem "rails_best_practices"
+  gem 'byebug'
 end
 
 group :test do
