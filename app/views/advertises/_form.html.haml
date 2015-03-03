@@ -99,18 +99,6 @@
     .row
       .col-md-12.text-center
         .form-actions
-        = f.submit 'Descartar e Ir a Pagina Principal', {:class => "btn btn-danger btn-lg", "data-toggle" => "modal", "data-target" => "#myModal"}
-        #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
-          .modal-dialog
-            .modal-content
-              .modal-header
-                %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-                  %span{"aria-hidden" => "true"} &times;
-                %h4#myModalLabel.modal-title Cancelar anuncio?
-              .modal-body
-                Estas Seguro bla bla
-              .modal-footer
-                %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
-                %button.btn.btn-primary{:type => "button"} Save changes
-        = f.submit 'Guardar Para Publicar Luego', {:class => "btn btn-warning btn-lg"}
-        = f.submit 'Publicar Anuncio Ahora', {:class => "btn btn-success btn-lg"}
+        = button_tag 'Publicar Anuncio Ahora', data:{disable_with: "<i class='fa fa-spinner fa-spin'></i> Publicando Anuncio...".html_safe}, class: "btn btn btn-success btn-lg"
+        = button_tag 'Guardar Anuncio para Publicar luego', data:{disable_with: "<i class='fa fa-spinner fa-spin'></i> Guardando Anuncio...".html_safe}, class: "btn btn btn-warning btn-lg"
+        = button_tag 'Descartar e Ir a Pagina Principal', data:{disable_with: "<i class='fa fa-spinner fa-spin'></i> Descartando Anuncio...".html_safe}, class: "btn btn btn-danger btn-lg"
