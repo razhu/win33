@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.arrange_as_array({:order => 'name'})
+    @locations = Location.where('ancestry IS  NULL')
   end
 
   # GET /locations/1
@@ -14,7 +14,7 @@ class LocationsController < ApplicationController
 
   # GET /locations/new
   def new
-    @location = Location.new
+    @location = Location.new(parent_id: params[:parent_id])
   end
 
   # GET /locations/1/edit
@@ -69,6 +69,6 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:name, :ancestry)
+      params.require(:location).permit(:name, :parent_id)
     end
 end

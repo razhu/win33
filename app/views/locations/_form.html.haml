@@ -1,11 +1,9 @@
 = simple_form_for(@location) do |f|
   = f.error_notification
+  = f.hidden_field :parent_id
 
   .form-inputs
-    //= f.input :name
-    = f.label :parent_id
-    = f.collection_select :parent_id, Location.arrange_as_array({:order => 'name'}, @location.possible_parents) , :id, :name_for_selects, :include_blank => true
-    = f.input :ancestry
+    = f.input :name
 
   .form-actions
     = f.button :submit

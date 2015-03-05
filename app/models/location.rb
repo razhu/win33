@@ -21,4 +21,5 @@ class Location < ActiveRecord::Base
     parents = Location.arrange_as_array(:order => 'name')
     return new_record? ? parents : parents - subtree
   end
+
 end

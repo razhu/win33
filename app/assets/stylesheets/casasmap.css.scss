@@ -1,0 +1,25 @@
+//colors
+$white: #fff;
+
+//urls
+$url_0: url("city.jpeg");
+
+.content-space {
+  padding: 0;
+  margin-bottom: 0;
+  color: inherit;
+  background: $url_0 no-repeat center center fixed;
+  background-size: cover;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.page-break {
+  width: 50%;
+  height: 3px;
+  background-color: $white;
+  margin: 0 auto;
+}
+.parallax-text{
+  color: $white;
+  font-weight: bold;
+}

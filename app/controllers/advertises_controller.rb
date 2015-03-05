@@ -1,7 +1,7 @@
 
 class AdvertisesController < ApplicationController
   before_action :set_advertise, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index,:show]
   respond_to :html
 
   def index
