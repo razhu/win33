@@ -15,4 +15,7 @@ class Advertise < ActiveRecord::Base
 
   validates :price, numericality: { greater_than: 0 }
   validates :title, :description, presence: true
+
+  
+
 end

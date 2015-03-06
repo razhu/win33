@@ -1,0 +1,17 @@
+= simple_form_for(@request) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :request_description
+    = f.input :price
+    = f.input :publish_date
+    = f.input :validate_date
+    = f.input :name
+    = f.input :phone
+    = f.input :cellphone
+    = f.input :skypeAcc
+    = f.input :email
+
+  .form-actions
+    = f.button :submit

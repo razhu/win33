@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @request.title
+%p
+  %b Request description:
+  = @request.request_description
+%p
+  %b Price:
+  = @request.price
+%p
+  %b Publish date:
+  = @request.publish_date
+%p
+  %b Validate date:
+  = @request.validate_date
+%p
+  %b Name:
+  = @request.name
+%p
+  %b Phone:
+  = @request.phone
+%p
+  %b Cellphone:
+  = @request.cellphone
+%p
+  %b Skypeacc:
+  = @request.skypeAcc
+%p
+  %b Email:
+  = @request.email
+
+= link_to 'Edit', edit_request_path(@request)
+\|
+= link_to 'Back', requests_path
