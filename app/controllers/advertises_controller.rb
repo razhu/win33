@@ -1,15 +1,15 @@
-
+# this is a comment
 class AdvertisesController < ApplicationController
+  before_action :authenticate_user!, except: [:index,:show]
   before_action :set_advertise, only: [:show, :edit, :update, :destroy]
-
   respond_to :html
 
   def index
     if !params[:search].nil?
       @search = Advertise.ransack(search_params)
-      @advertises = @search.result.page(params[:page]).per(30)
+      @advertises = @search.result.page(params[:page]).per(10)
     else
-      @advertises = Advertise.all.page(params[:page]).per(30)
+      @advertises = Advertise.all.page(params[:page]).per(10)
     end
     respond_with(@advertise)
   end

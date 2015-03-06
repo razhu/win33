@@ -1,9 +1,5 @@
-%h1 Listing advertises
-= paginate @advertises, :theme => 'twitter-bootstrap-3'
-= simple_form_for :search, url: advertises_path, method: :get do |f|
-  = f.input :id_eq, label: 'Buscar:'
-  = f.submit "Search"
-%table
+%h3 La Paz / Sopocachi / Casas / Venta
+%table.table.table-striped.table-hover
   %thead
     %tr
       %th Title
@@ -22,32 +18,18 @@
       %th Code
       %th user_id
       %th
+
   %tbody
     - @advertises.each do |advertise|
       %tr
-        %td= advertise.title
-        %td= advertise.description
-        %td= advertise.direction
-        %td= advertise.price
-        %td= advertise.negotiable
-        %td= advertise.credit
-        %td= advertise.price_m2
-        %td= advertise.name_contact
-        %td= advertise.phone_contact
-        %td= advertise.time_to_contact
-        %td= advertise.visits_number
-        %td= advertise.publish_date
-        %td= advertise.validate_date
-        %td= advertise.code
-        %td= advertise.user_id
-        %td= link_to 'Show', advertise
-        %td= link_to 'Edit', edit_advertise_path(advertise)
-        %td= link_to 'Destroy', advertise, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %h4
+          = link_to advertise.title, advertise_path(advertise)
+        %p
+          %b
+            = advertise.price
+        %p
+          = advertise.description
+        %p
+          = advertise.publish_date
 
-
-%br
-
-= simple_form_for :ja, :url => advertises_path do |f|
-  = f.input :a
-
-= link_to 'New Advertise', new_advertise_path
+= paginate @advertises, :theme => 'twitter-bootstrap-3'
