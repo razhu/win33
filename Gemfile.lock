@@ -489,6 +489,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   commontator
   database_cleaner
+  dev
   devise
   devise-i18n
   factory_girl_rails

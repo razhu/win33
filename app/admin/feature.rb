@@ -11,4 +11,5 @@ ActiveAdmin.register Feature do
   #   permitted << :other if resource.something?
   #   permitted
   # end
+
 end

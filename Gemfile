@@ -56,6 +56,7 @@ group :development do
   gem 'rb-inotify', require: false
   gem 'spring-commands-rspec'
   gem 'web-console', '~> 2.0'
+  gem 'dev'
 end
 
 group :development, :test do
@@ -65,7 +66,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rspec-rails'
   gem 'rubocop'
-  gem "rails_best_practices"
+  gem 'rails_best_practices'
   gem 'byebug'
 end
 

@@ -26,10 +26,13 @@
           = link_to advertise.title, advertise_path(advertise)
         %p
           %b
+            Price ($):
+          %h5
             = advertise.price
         %p
           = advertise.description
         %p
+          Publicado:
           = advertise.publish_date
 
 = paginate @advertises, :theme => 'twitter-bootstrap-3'

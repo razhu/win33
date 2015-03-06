@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "pages/professional_account", :as => 'professional_account_page'
   get "pages/terms_and_conditions", :as => 'terms_and_conditions_page'
   resources :photos
+  resources :locations
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
