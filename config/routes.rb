@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :requests
+
   resources :features
 
   # getting static pages

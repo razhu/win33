@@ -21,3 +21,13 @@ puts 'CREATED ADMIN USER: ' << user.email
   )
 end
 puts "created 100 advertises"
+
+100.times do |counter|
+  Request.create(
+      title: Faker::Company.name,
+      request_description: Faker::Lorem.paragraph,
+      price: Faker::Number.number(5),
+      phone: Faker::PhoneNumber.phone_number,
+
+  )
+end

@@ -1,0 +1,20 @@
+= simple_form_for(@request) do |f|
+  = f.error_notification
+  .form-inputs
+    .row
+      %h3
+        %b Descripcion del Inmueble
+    = f.input :title, label: 'Titulo'
+    = f.input :request_description, label: 'Descripcion'
+    = f.input :price, label: 'Presupuesto'
+    = f.input :validate_date, label: 'Fecha limite para recibir ofertas'
+    .row
+      %h3
+        %b Informacion de contacto
+    = f.input :name, label: 'Nombre'
+    = f.input :phone, label: 'Telefono'
+    = f.input :cellphone, label: 'Celular'
+    = f.input :skypeAcc, label: 'Cuenta de Skype'
+    = f.input :email, label: 'Email'
+  .form-actions
+    = button_tag "Publicar Solicitud de Inmueble", data:{disable_with: "<i class='fa fa-spinner fa-spin'></i> Publicando Anuncio...".html_safe}, class: "btn btn btn-success btn-lg"

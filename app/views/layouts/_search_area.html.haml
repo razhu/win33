@@ -1,26 +1,33 @@
 %br/
 .panel.panel-default
   .panel-body
-    = simple_form_for :search, url: advertises_path, method: :get do |f|
-      .col-md-2
-        = f.fields_for :property_type do |p|
-          = p.input :property_type, collection: PropertyType.all_types, label: false, prompt: 'Tipo Inmueble'
-      .col-md-2
-        = f.fields_for :transacion_type do |p|
-          = p.input :transacion_type, collection: TransactionType.all_types, label: false, prompt: 'Tipo Transaccion'
-      .col-md-2
-
-      .col-md-2
-
-      .col-md-1
-        = button_tag(fa_icon('search'), class: "btn btn-primary")
+    .raw
+      .col-md-9
+        .raw
+          = simple_form_for :search, url: advertises_path, method: :get do |f|
+            .col-md-2
+              = f.fields_for :property_type do |p|
+                = p.input :property_type, collection: PropertyType.all_types, label: false, prompt: 'Tipo Inmueble'
+            .col-md-2
+              = f.fields_for :transacion_type do |p|
+                = p.input :transacion_type, collection: TransactionType.all_types, label: false, prompt: 'Tipo Transaccion'
+            .col-md-3
+              = f.fields_for :location do |p|
+                = p.input :location, collection: Location.all, label: false, prompt: 'Region'
+            .col-md-3
+              = f.fields_for :location do |p|
+                = p.input :location, collection: Location.all, label: false, prompt: 'Region'
+            .col-md-2
+              = button_tag(fa_icon('search'), class: "btn btn-primary", data:{disable_with: "<i class='fa fa-spinner fa-spin'></i>".html_safe})
       .col-md-3
         .row
           = simple_form_for :search, url: advertises_path, method: :get do |f|
             .col-md-9
               = f.input :id_eq, label: false, placeholder: 'Codigo Inmueble. Ej. 123'
             .col-md-3
-              = button_tag(fa_icon('search'), class: "btn btn-primary")
+              = button_tag(fa_icon('search'), class: "btn btn-primary", data:{disable_with: "<i class='fa fa-spinner fa-spin'></i>".html_safe})
+
+
 
 
 

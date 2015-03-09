@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_not_authorized(exception)
-    sign_out # or user will end up in a redirection loop
+    # sign_out # or user will end up in a redirection loop
     flash[:error] = "Access has been denied because ..."
     redirect_to new_user_session_path
   end

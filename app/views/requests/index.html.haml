@@ -1,0 +1,36 @@
+%h1 Solicitudes
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Request description
+      %th Price
+      %th Publish date
+      %th Validate date
+      %th Name
+      %th Phone
+      %th Cellphone
+      %th Skypeacc
+      %th Email
+      %th
+      %th
+      %th
+      
+  %tbody
+    - @requests.each do |request|
+      %tr
+        %td= request.title
+        %td= request.request_description
+        %td= request.price
+        %td= request.validate_date
+        %td= request.name
+        %td= request.phone
+        %td= request.cellphone
+        %td= request.skypeAcc
+        %td= request.email
+        %td= link_to 'Show', request
+        %td= link_to 'Edit', edit_request_path(request)
+        %td= link_to 'Destroy', request, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+= paginate @requests, :theme => 'twitter-bootstrap-3'
