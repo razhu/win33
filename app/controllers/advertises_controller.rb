@@ -9,7 +9,7 @@ class AdvertisesController < ApplicationController
       @search = Advertise.ransack(search_params)
       @advertises = @search.result.page(params[:page]).per(10)
     else
-      @advertises = Advertise.all.page(params[:page]).per(10)
+      @advertises = Advertise.all.page(params[:page]).per(10).order('id DESC')
     end
     respond_with(@advertise)
   end

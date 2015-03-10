@@ -51,7 +51,8 @@
         %br/
         %p La cuenta profesional es para usted.
         %br/
-        %a.btn.btn-primary.btn-lg.text-center{:href => "#"} Mas informacion
+        = link_to 'Mas info', professional_account_page_path, class: 'btn.btn-primary.btn-lg'
+        -# %a.btn.btn-primary.btn-lg.text-center{:href => "#"} Mas informacion
       .col-md-5
         = link_to image_tag('agente.png'), "#"
 .row

@@ -2,37 +2,26 @@
 %table.table.table-striped.table-hover
   %thead
     %tr
-      %th Title
-      %th Description
-      %th Direction
-      %th Price
-      %th Negotiable
-      %th Credit
-      %th Price M2
-      %th Name contact
-      %th Phone contact
-      %th Time to contact
-      %th Visits number
-      %th Publish date
-      %th Validate date
-      %th Code
-      %th user_id
       %th
-
+      %th
+      %th Precio ($)
+      %th Publicado
   %tbody
     - @advertises.each do |advertise|
       %tr
-        %h4
-          = link_to advertise.title, advertise_path(advertise)
-        %p
-          %b
-            Price ($):
-          %h5
-            = advertise.price
-        %p
-          = advertise.description
-        %p
-          Publicado:
-          = advertise.publish_date
-
-= paginate @advertises, :theme => 'twitter-bootstrap-3'
+        %td
+          = image_tag('house_thumbnail.png')
+        %td
+          %h4
+            = link_to advertise.title, advertise_path(advertise)
+          %p
+            = advertise.description
+        %td
+          %p
+            %h5
+              = advertise.price
+        %td
+          %p
+            = friendly_date advertise.created_at
+.row.text-center
+  = paginate @advertises, :theme => 'twitter-bootstrap-3'
