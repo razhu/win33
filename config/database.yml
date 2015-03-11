@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: 5
+
+development:
+  <<: *default
+  database: casasmap8_development
+
+
+test:
+  <<: *default
+  database: casasmap8_test
+
+
+production:
+  <<: *default
+  database: casasmap8_production
+  username: casasmap8
+  password: <%= ENV['CASASMAP8_DATABASE_PASSWORD'] %>
